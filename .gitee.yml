@@ -1,8 +1,8 @@
 image: python3.11-nodejs19
 before_script:
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx
+  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple AiBot.py
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-copybutton
-  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-tabs
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-tabs
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-togglebutton
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-jinja
