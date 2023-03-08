@@ -20,12 +20,12 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.duration',
-    'sphinx_copybutton',  # sphinx-copybutton
-    'sphinx_tabs.tabs',  # sphinx-tabs
-    'sphinx_togglebutton',  # sphinx-togglebutton
-    'myst_nb',  # parse .md and .ipynb  myst-nb
-    'sphinx_jinja',  # sphinx-jinja
-    'sphinx_js',  # sphinx-js  + npm install -g jsdoc
+    'sphinx_copybutton',  # pip install sphinx-copybutton
+    'sphinx_tabs.tabs',  # pip install sphinx-tabs
+    'sphinx_togglebutton',  # pip install sphinx-togglebutton
+    'myst_nb',  # parse .md and .ipynb  pip install myst-nb
+    'sphinx_jinja',  # pip install sphinx-jinja
+    'sphinx_js',  # pip install sphinx-js  + npm install -g jsdoc
 ]
 
 source_path = os.path.dirname(os.path.abspath(__file__))
@@ -38,6 +38,7 @@ language = 'zh_CN'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+# pip install pydata-sphinx-theme
 html_theme = 'pydata_sphinx_theme'  # alabaster(默认), furo, pydata_sphinx_theme
 html_static_path = ['_static']
 

@@ -7,6 +7,7 @@ before_script:
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-togglebutton
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-jinja
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-js
+  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pydata-sphinx-theme
   - npm install -g jsdoc
 script:
   - sphinx-build -b html . ./html

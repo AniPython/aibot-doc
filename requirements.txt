@@ -1,2 +1,7 @@
 sphinx
-furo
+sphinx-copybutton
+sphinx-tabs
+sphinx-togglebutton
+sphinx-jinja
+sphinx-js
+myst-nb
