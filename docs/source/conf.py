@@ -20,12 +20,12 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.duration',
-    'sphinx_copybutton',
-    'sphinx_tabs.tabs',
-    'sphinx_togglebutton',
-    'myst_nb',  # parse .md and .ipynb
-    'sphinx_jinja',
-    'sphinx_js',
+    'sphinx_copybutton',  # sphinx-copybutton
+    'sphinx_tabs.tabs',  # sphinx-tabs
+    'sphinx_togglebutton',  # sphinx-togglebutton
+    'myst_nb',  # parse .md and .ipynb  myst-nb
+    'sphinx_jinja',  # sphinx-jinja
+    'sphinx_js',  # sphinx-js  + npm install -g jsdoc
 ]
 
 source_path = os.path.dirname(os.path.abspath(__file__))

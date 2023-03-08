@@ -1,8 +1,23 @@
-image: python:3.11-slim-buster
+image: python3.11-nodejs19
 before_script:
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx
+  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-copybutton
+  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-tabs
+  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-tabs
+  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-togglebutton
+  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-jinja
+  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-js
+  - npm install -g jsdoc
 script:
   - sphinx-build -b html . ./html
 artifacts:
   paths:
     - html
+
+
+    'sphinx_copybutton',  # sphinx-copybutton
+    'sphinx_tabs.tabs',  #
+    'sphinx_togglebutton',  #
+    'myst_nb',  # parse .md and .ipynb  myst-nb
+    'sphinx_jinja',  #
+    'sphinx_js',  #   + npm install -g jsdoc
