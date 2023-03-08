@@ -1,0 +1,638 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>AiBot.WinBotMain.get_element_rect &#8212; Aibote  文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="AiBot.WinBotMain.get_element_value" href="AiBot.WinBotMain.get_element_value.html" />
+    <link rel="prev" title="AiBot.WinBotMain.get_element_name" href="AiBot.WinBotMain.get_element_name.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aibote  文档</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        Aibote 基本使用
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev_manual/index.html">
+                        Aibote 开发手册
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        Aibote 基本使用
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev_manual/index.html">
+                        Aibote 开发手册
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../AndroidBot.html">AndroidBot</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.any_elements_exists.html">AiBot.AndroidBotMain.any_elements_exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.back.html">AiBot.AndroidBotMain.back</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.call_phone.html">AiBot.AndroidBotMain.call_phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.clear_script_widget.html">AiBot.AndroidBotMain.clear_script_widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.click.html">AiBot.AndroidBotMain.click</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.click_any_elements.html">AiBot.AndroidBotMain.click_any_elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.click_element.html">AiBot.AndroidBotMain.click_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.click_element_by_slide.html">AiBot.AndroidBotMain.click_element_by_slide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.create_check_box.html">AiBot.AndroidBotMain.create_check_box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.create_edit_view.html">AiBot.AndroidBotMain.create_edit_view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.create_text_view.html">AiBot.AndroidBotMain.create_text_view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.create_web_view.html">AiBot.AndroidBotMain.create_web_view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.delete_android_file.html">AiBot.AndroidBotMain.delete_android_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.double_click.html">AiBot.AndroidBotMain.double_click</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.element_exists.html">AiBot.AndroidBotMain.element_exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.element_is_selected.html">AiBot.AndroidBotMain.element_is_selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.element_not_exists.html">AiBot.AndroidBotMain.element_not_exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.execute.html">AiBot.AndroidBotMain.execute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.exists_android_file.html">AiBot.AndroidBotMain.exists_android_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.find_color.html">AiBot.AndroidBotMain.find_color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.find_dynamic_image.html">AiBot.AndroidBotMain.find_dynamic_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.find_image.html">AiBot.AndroidBotMain.find_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.find_images.html">AiBot.AndroidBotMain.find_images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.find_text.html">AiBot.AndroidBotMain.find_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.gesture.html">AiBot.AndroidBotMain.gesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_activity.html">AiBot.AndroidBotMain.get_activity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_android_id.html">AiBot.AndroidBotMain.get_android_id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_clipboard_text.html">AiBot.AndroidBotMain.get_clipboard_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_color.html">AiBot.AndroidBotMain.get_color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_device_ip.html">AiBot.AndroidBotMain.get_device_ip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_element_desc.html">AiBot.AndroidBotMain.get_element_desc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_element_rect.html">AiBot.AndroidBotMain.get_element_rect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_element_text.html">AiBot.AndroidBotMain.get_element_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_image_size.html">AiBot.AndroidBotMain.get_image_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_package.html">AiBot.AndroidBotMain.get_package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_script_params.html">AiBot.AndroidBotMain.get_script_params</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_text.html">AiBot.AndroidBotMain.get_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.get_window_size.html">AiBot.AndroidBotMain.get_window_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.home.html">AiBot.AndroidBotMain.home</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.long_click.html">AiBot.AndroidBotMain.long_click</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.move.html">AiBot.AndroidBotMain.move</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.open_uri.html">AiBot.AndroidBotMain.open_uri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.press.html">AiBot.AndroidBotMain.press</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.press_release.html">AiBot.AndroidBotMain.press_release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.pull_file.html">AiBot.AndroidBotMain.pull_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.push_file.html">AiBot.AndroidBotMain.push_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.read_android_file.html">AiBot.AndroidBotMain.read_android_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.recent_tasks.html">AiBot.AndroidBotMain.recent_tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.release.html">AiBot.AndroidBotMain.release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.save_element_screenshot.html">AiBot.AndroidBotMain.save_element_screenshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.save_screenshot.html">AiBot.AndroidBotMain.save_screenshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.script_main.html">AiBot.AndroidBotMain.script_main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.scroll_element.html">AiBot.AndroidBotMain.scroll_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.send_keys.html">AiBot.AndroidBotMain.send_keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.send_msg.html">AiBot.AndroidBotMain.send_msg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.send_vk.html">AiBot.AndroidBotMain.send_vk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.set_clipboard_text.html">AiBot.AndroidBotMain.set_clipboard_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.set_element_text.html">AiBot.AndroidBotMain.set_element_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.show_toast.html">AiBot.AndroidBotMain.show_toast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.start_app.html">AiBot.AndroidBotMain.start_app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.swipe.html">AiBot.AndroidBotMain.swipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.AndroidBotMain.write_android_file.html">AiBot.AndroidBotMain.write_android_file</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../WinBot.html">WinBot</a><input checked class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.click_element.html">AiBot.WinBotMain.click_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.click_mouse.html">AiBot.WinBotMain.click_mouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.close_window.html">AiBot.WinBotMain.close_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.download_file.html">AiBot.WinBotMain.download_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.execute.html">AiBot.WinBotMain.execute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.find_color.html">AiBot.WinBotMain.find_color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.find_dynamic_image.html">AiBot.WinBotMain.find_dynamic_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.find_images.html">AiBot.WinBotMain.find_images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.find_parent_window.html">AiBot.WinBotMain.find_parent_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.find_sub_window.html">AiBot.WinBotMain.find_sub_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.find_text.html">AiBot.WinBotMain.find_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.find_window.html">AiBot.WinBotMain.find_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.find_windows.html">AiBot.WinBotMain.find_windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.get_clipboard_text.html">AiBot.WinBotMain.get_clipboard_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.get_color.html">AiBot.WinBotMain.get_color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.get_element_name.html">AiBot.WinBotMain.get_element_name</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">AiBot.WinBotMain.get_element_rect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.get_element_value.html">AiBot.WinBotMain.get_element_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.get_element_window.html">AiBot.WinBotMain.get_element_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.get_text.html">AiBot.WinBotMain.get_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.get_window_name.html">AiBot.WinBotMain.get_window_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.move_mouse.html">AiBot.WinBotMain.move_mouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.save_screenshot.html">AiBot.WinBotMain.save_screenshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.script_main.html">AiBot.WinBotMain.script_main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.scroll_element.html">AiBot.WinBotMain.scroll_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.scroll_mouse.html">AiBot.WinBotMain.scroll_mouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.send_keys.html">AiBot.WinBotMain.send_keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.send_keys_by_hwnd.html">AiBot.WinBotMain.send_keys_by_hwnd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.send_vk.html">AiBot.WinBotMain.send_vk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.send_vk_by_hwnd.html">AiBot.WinBotMain.send_vk_by_hwnd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.set_clipboard_text.html">AiBot.WinBotMain.set_clipboard_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.set_element_focus.html">AiBot.WinBotMain.set_element_focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.set_element_state.html">AiBot.WinBotMain.set_element_state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.set_element_value.html">AiBot.WinBotMain.set_element_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.set_window_top.html">AiBot.WinBotMain.set_window_top</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.show_window.html">AiBot.WinBotMain.show_window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WinBotMain.start_process.html">AiBot.WinBotMain.start_process</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../WebBot.html">WebBot</a><input checked class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.back.html">AiBot.WebBotMain.back</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.clear_cache.html">AiBot.WebBotMain.clear_cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.clear_element.html">AiBot.WebBotMain.clear_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.click_alert.html">AiBot.WebBotMain.click_alert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.click_element.html">AiBot.WebBotMain.click_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.click_mouse.html">AiBot.WebBotMain.click_mouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.click_mouse_by_element.html">AiBot.WebBotMain.click_mouse_by_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.close_current_page.html">AiBot.WebBotMain.close_current_page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.delete_all_cookies.html">AiBot.WebBotMain.delete_all_cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.delete_cookies.html">AiBot.WebBotMain.delete_cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.execute.html">AiBot.WebBotMain.execute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.execute_script.html">AiBot.WebBotMain.execute_script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.forward.html">AiBot.WebBotMain.forward</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_alert_text.html">AiBot.WebBotMain.get_alert_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_all_cookies.html">AiBot.WebBotMain.get_all_cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_all_page_id.html">AiBot.WebBotMain.get_all_page_id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_cookies.html">AiBot.WebBotMain.get_cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_current_page_id.html">AiBot.WebBotMain.get_current_page_id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_current_title.html">AiBot.WebBotMain.get_current_title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_current_url.html">AiBot.WebBotMain.get_current_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_element_attr.html">AiBot.WebBotMain.get_element_attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_element_inner_html.html">AiBot.WebBotMain.get_element_inner_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_element_outer_html.html">AiBot.WebBotMain.get_element_outer_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_element_rect.html">AiBot.WebBotMain.get_element_rect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_element_text.html">AiBot.WebBotMain.get_element_text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.get_window_pos.html">AiBot.WebBotMain.get_window_pos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.goto.html">AiBot.WebBotMain.goto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.is_available.html">AiBot.WebBotMain.is_available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.is_displayed.html">AiBot.WebBotMain.is_displayed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.is_selected.html">AiBot.WebBotMain.is_selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.mobile_emulation.html">AiBot.WebBotMain.mobile_emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.move_mouse.html">AiBot.WebBotMain.move_mouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.move_to_element.html">AiBot.WebBotMain.move_to_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.new_page.html">AiBot.WebBotMain.new_page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.quit.html">AiBot.WebBotMain.quit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.refresh.html">AiBot.WebBotMain.refresh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.save_screenshot.html">AiBot.WebBotMain.save_screenshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.script_main.html">AiBot.WebBotMain.script_main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.scroll_mouse.html">AiBot.WebBotMain.scroll_mouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.scroll_mouse_by_element.html">AiBot.WebBotMain.scroll_mouse_by_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.send_keys.html">AiBot.WebBotMain.send_keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.send_vk.html">AiBot.WebBotMain.send_vk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.set_cookies.html">AiBot.WebBotMain.set_cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.set_element_attr.html">AiBot.WebBotMain.set_element_attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.set_element_focus.html">AiBot.WebBotMain.set_element_focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.set_element_value.html">AiBot.WebBotMain.set_element_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.set_window_pos.html">AiBot.WebBotMain.set_window_pos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.switch_to_frame.html">AiBot.WebBotMain.switch_to_frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.switch_to_main_frame.html">AiBot.WebBotMain.switch_to_main_frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.switch_to_page.html">AiBot.WebBotMain.switch_to_page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AiBot.WebBotMain.upload_file_by_element.html">AiBot.WebBotMain.upload_file_by_element</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../WinBot.html" class="nav-link">WinBot</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">AiBot.WinBotMain.get_element_rect</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="aibot-winbotmain-get-element-rect">
+<h1>AiBot.WinBotMain.get_element_rect<a class="headerlink" href="#aibot-winbotmain-get-element-rect" title="此标题的永久链接">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="AiBot.WinBotMain.get_element_rect">
+<span class="sig-prename descclassname"><span class="pre">WinBotMain.</span></span><span class="sig-name descname"><span class="pre">get_element_rect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hwnd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Point</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Point</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#AiBot.WinBotMain.get_element_rect" title="永久链接至目标">#</a></dt>
+<dd><p>获取元素矩形，返回左上和右下坐标</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hwnd</strong> – 窗口句柄</p></li>
+<li><p><strong>xpath</strong> – 元素路径</p></li>
+<li><p><strong>wait_time</strong> – 等待时间，默认取 self.wait_timeout；</p></li>
+<li><p><strong>interval_time</strong> – 轮询间隔时间，默认取 self.interval_timeout；</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>左上和右下坐标</p>
+</dd>
+<dt class="field-odd">返回类型<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[Tuple[Point, Point]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="AiBot.WinBotMain.get_element_name.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">AiBot.WinBotMain.get_element_name</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AiBot.WinBotMain.get_element_value.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">AiBot.WinBotMain.get_element_value</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#AiBot.WinBotMain.get_element_rect"><code class="docutils literal notranslate"><span class="pre">WinBotMain.get_element_rect()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/api/AiBot.WinBotMain.get_element_rect.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> 显示源代码
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, Aibote.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

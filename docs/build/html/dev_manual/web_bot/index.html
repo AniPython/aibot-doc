@@ -1,0 +1,964 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>WebBot &#8212; Aibote  文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dev_manual/web_bot/index';</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="WebSocketBot" href="../web_socket_bot/index.html" />
+    <link rel="prev" title="WindowBot" href="../window_bot/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aibote  文档</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        Aibote 基本使用
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Aibote 开发手册
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        Aibote 基本使用
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Aibote 开发手册
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../android_bot/index.html">AndroidBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../window_bot/index.html">WindowBot</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">WebBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_socket_bot/index.html">WebSocketBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../multimodule_mixing/index.html">多模块混合开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/index.html">界面开发</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Aibote 开发手册</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">WebBot</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="webbot">
+<h1>WebBot<a class="headerlink" href="#webbot" title="此标题的永久链接">#</a></h1>
+<section id="id1">
+<h2>主函数示例<a class="headerlink" href="#id1" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">WebBot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;WebBot&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 引用WebBot模块</span>
+
+<span class="c1">//注册主函数</span>
+<span class="nx">WebBot</span><span class="p">.</span><span class="nx">registerMain</span><span class="p">(</span><span class="nx">webMain</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">36678</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">browserName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;chrome&quot;</span><span class="p">});</span>
+
+<span class="cm">/**用作代码提示，webMain函数会被多次调用，注意使用全局变量</span>
+<span class="cm"> * @param {WebBot} webBot</span>
+<span class="cm"> */</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">webMain</span><span class="p">(</span><span class="nx">webBot</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//设置隐式等待</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">setImplicitTimeout</span><span class="p">(</span><span class="mf">5000</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s2">&quot;https://www.baidu.com/&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">sendKeys</span><span class="p">(</span><span class="s1">&#39;//*[@id=&quot;kw&quot;]&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Aibote\r&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">pass</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id2">
+<h2>注册主函数<a class="headerlink" href="#id2" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">WebBot</span><span class="p">.</span><span class="nx">registerMain</span><span class="p">(</span><span class="nx">webMain</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">36678</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">browserName</span><span class="o">:</span><span class="s2">&quot;chrome&quot;</span><span class="p">});</span>
+<span class="c1">// 参数一 函数行，要注册的函数，必须含一个参数，用作接收WebBot对象</span>
+<span class="c1">// 参数二 字符串型，脚本所在的地址，传递给WebDriver.exe。如果值为 &quot;127.0.0.1&quot;脚本会将参数 ip和port作为启动参数并启动WebDriver.exe，否则用户需要手动启动WebDriver.exe 并且提供启动参数。</span>
+<span class="c1">// 命令行启动示例：WebDriver.exe &quot;{\&quot;serverIp\&quot;:\&quot;127.0.0.1\&quot;, \&quot;serverPort\&quot;:26678, \&quot;browserName\&quot;:\&quot;chrome\&quot;, \&quot;debugPort\&quot;:0, \&quot;userDataDir\&quot;:\&quot;./UserData\&quot;, \&quot;browserPath\&quot;:\&quot;null\&quot;, \&quot;argument\&quot;:\&quot;null\&quot;}&quot;</span>
+<span class="c1">// 参数三 整型，监听端口，传递给WebDriver.exe。脚本多进程需要指定不同的端口</span>
+<span class="c1">// 参数四 json对象，{{browserName:string, debugPort:number, userDataDir:string, browserPath:string, argument:string}} 可选参数</span>
+<span class="c1">// browserName 浏览器名称，默认 chrome 浏览器。edge和chrome会自动寻找浏览器路径，其他浏览器需要指定browserPath。</span>
+<span class="c1">// debugPort 调试端口。默认 0 随机端口。指定端口则接管已打开的浏览器。启动浏览器指定的参数 --remote-debugging-port=19222 --user-data-dir=C:\\Users\\电脑用户名\\AppData\\Local\\Google\\Chrome\\User Data</span>
+<span class="c1">// userDataDir 用户数据目录,默认./UserData。多进程同时操作多个浏览器数据目录不能相同。第一次指定数据目录路径会进入浏览器欢迎界面，第二次恢复正常操作</span>
+<span class="c1">// browserPath 浏览器路径</span>
+<span class="c1">// argument 浏览器启动参数。例如：无头模式: --headless   设置代理：--proxy-server=127.0.0.1:8080，多个启动参数空格隔开</span>
+
+<span class="sb">`</span>
+<span class="sb">// 代码示例</span>
+<span class="sb">//指定调试端口，接管已打开的浏览器。启动浏览器指定的参数 --remote-debugging-port=19222 --user-data-dir=C:\\Users\\电脑用户名\\AppData\\Local\\Google\\Chrome\\User Data</span>
+<span class="sb">await WebBot.registerMain(webMain, &quot;127.0.0.1&quot;, 36678, {browserName:&quot;chrome&quot;, debugPort:19222});//debugPort:19222 必须和 --remote-debugging-port=19222 端口对应</span>
+
+<span class="sb">//指定浏览器路径</span>
+<span class="sb">await WebBot.registerMain(webMain, &quot;127.0.0.1&quot;, 36678, {browserName:&quot;360浏览器&quot;, browserPath:&quot;D:\\Program Files\\360se.exe&quot;});</span>
+
+<span class="sb">//启动参数指定User-Agent</span>
+<span class="sb">await WebBot.registerMain(webMain, &quot;127.0.0.1&quot;, 36678, {browserName:&quot;chrome&quot;, argument:&quot;--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36&quot;});</span>
+
+<span class="sb">//云端远程部署</span>
+<span class="sb">await WebBot.registerMain(webMain, &quot;192.168.1.88&quot;, 36678, {browserName:&quot;chrome&quot;});</span>
+<span class="sb">`</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
+
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id3">
+<h2>等待超时<a class="headerlink" href="#id3" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span>
+<span class="c1">// 显示等待</span>
+<span class="c1">// 参数一 整型，等待时间，单位毫秒</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">setImplicitTimeout</span><span class="p">(</span><span class="nx">waitMs</span><span class="p">,</span><span class="w"> </span><span class="nx">intervalMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="c1">// 隐式等待</span>
+<span class="c1">// 参数一 整型，等待时间，单位毫秒</span>
+<span class="c1">// 参数二 整型，心跳间隔，单位毫秒。可选参数，默认100毫秒</span>
+<span class="c1">// 作用全局，程序起始设置一次即可。并发会影响实际等待时间</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id4">
+<h2>页面和导航<a class="headerlink" href="#id4" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">&#39;http://www.ai-bot.net&#39;</span><span class="p">);</span>
+<span class="c1">// 参数一 字符串型，打开指定URL，http:// 或者 https:// 开头</span>
+<span class="c1">// 总是返回true</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">newPage</span><span class="p">(</span><span class="s1">&#39;https:// www.baidu.com&#39;</span><span class="p">);</span>
+<span class="c1">// 参数一 字符串型，新建tab页面并跳转到指定url</span>
+<span class="c1">// 成功返回true，失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">back</span><span class="p">();</span>
+<span class="c1">// 后退</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">forward</span><span class="p">();</span>
+<span class="c1">// 前进</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+<span class="c1">// 刷新</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getCurPageId</span><span class="p">();</span>
+<span class="c1">// 获取当前页面ID</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getAllPageId</span><span class="p">();</span>
+<span class="c1">// 成功返回页面ID数组,失败返回null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">switchPage</span><span class="p">(</span><span class="nx">pageId</span><span class="p">);</span>
+<span class="c1">// 切换指定页面</span>
+<span class="c1">// 参数一 字符串型，要切换的页面ID</span>
+<span class="c1">// 成功返回true，失败返回false。如果失败继续操作，会造成不可知的错误</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">closePage</span><span class="p">();</span>
+<span class="c1">// 关闭当前页面</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getCurrentUrl</span><span class="p">();</span>
+<span class="c1">// 获取URL</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">();</span>
+<span class="c1">// 获取页面标题</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="iframe">
+<h2>IFrame<a class="headerlink" href="#iframe" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">switchFrame</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">// 切换frame</span>
+<span class="c1">// 参数一 字符串型，要切换frame的元素路径。</span>
+<span class="c1">// 成功返回true，失败返回false</span>
+
+<span class="sb">`</span>
+<span class="sb">// 代码示例</span>
+<span class="sb">// 切换iframe</span>
+<span class="sb">let xpath = &quot;/html/body/div[3]/div[3]/div[1]/div/div[3]/div[1]/div[1]/iframe&quot;;</span>
+<span class="sb">await webBot.switchFrame(xpath);</span>
+<span class="sb">`</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">switchMainFrame</span><span class="p">();</span>
+<span class="c1">// 切换主frame，人为关闭/切换页面也需要通过此函数切换到当前页面</span>
+<span class="c1">// 成功返回true，失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-4-1" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-1" name="4-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id5">
+<h2>元素操作<a class="headerlink" href="#id5" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">clickElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//点击元素</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">setElementValue</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="c1">//设置编辑框内容</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//参数二 字符串型，输入的值</span>
+<span class="c1">//成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getElementText</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//获取文本</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//成功返回元素文本内容，一般指元素innerText属性的值，失败返回null</span>
+
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 遍历xpath 获取所有兄弟节点内容</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getElementText</span><span class="p">(</span><span class="sb">`//*[@id=&quot;s-top-left&quot;]/a[</span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">]`</span><span class="p">);</span><span class="w"> </span><span class="c1">//模板字符串</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getElementOuterHTML</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//获取outerHTML</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//成功返回元素outerHTML，失败返回null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getElementInnerHTML</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//获取innerHTML</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//成功返回元素outerHTML，失败返回null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">setElementAttribute</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">attributeName</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="c1">//设置属性值</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//参数二 字符串型，指定的属性名</span>
+<span class="c1">//参数三 字符串型，属性值</span>
+<span class="c1">//成功返回true，失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getElementAttribute</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">attributeName</span><span class="p">);</span>
+<span class="c1">//获取属性值</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//参数二 字符串型，指定的属性名</span>
+<span class="c1">//成功返回元素属性值，失败返回null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getElementRect</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//获取矩形位置</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//返回 {left:number, top:number, right:number, bottom:number, width:number, height:number}，失败返回null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">isSelected</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//判断该元素是否选中</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//返回true 或 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">isDisplayed</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//判断该元素是否可见</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//返回true 或 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">isEnabled</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//判断元素是否可用</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//返回true 或 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">clearElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//清除元素值</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">setElementFocus</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">//设置元素焦点</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">uploadFile</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">filePath</span><span class="p">);</span>
+<span class="c1">//通过元素上传文件</span>
+<span class="c1">//参数一 字符串型，元素路径</span>
+<span class="c1">//参数二 字符串型，本地文件路径，路径不存在会导致网页崩溃</span>
+<span class="c1">//成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id6">
+<h2>鼠标键盘<a class="headerlink" href="#id6" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-6-6-0" name="6-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-6-6-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-6-6-1" name="6-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-6-6-0" class="sphinx-tabs-panel" id="panel-6-6-0" name="6-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">sendKeys</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">);</span>
+<span class="c1">// 发送文本</span>
+<span class="c1">// 参数一 字符串型，元素路径</span>
+<span class="c1">// 参数二 字符串型，要输入的文本，例如sendKeys(&#39;//*[@id=&quot;kw&quot;]&#39;, &#39;aibote\r&#39;); aibote换行</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="sb">`</span>
+<span class="sb">// 代码示例</span>
+<span class="sb">// 输入 aibote换行</span>
+<span class="sb">await webBot.sendKeys(&quot;//*[@id=\&quot;kw\&quot;]&quot;, &quot;aibote\r&quot;);</span>
+<span class="sb">`</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">sendVk</span><span class="p">(</span><span class="nx">vkCode</span><span class="p">);</span>
+<span class="c1">// 发送Vk虚拟键</span>
+<span class="c1">// 参数一 整型，VK键值，仅支持 回退键:8  制表键:9  回车键:13  空格键:32  方向左键:37  方向上键:38  方向右键:39  方向下键:40  删除键:46</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">clickMouse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">);</span>
+<span class="c1">// 点击鼠标</span>
+<span class="c1">// 参数一 整型，横坐标，非Windows坐标，页面左上角为起始坐标</span>
+<span class="c1">// 参数二 整型，纵坐标，非Windows坐标，页面左上角为起始坐标</span>
+<span class="c1">// 参数三 整型，单击左键:1  单击右键:2  按下左键:3  弹起左键:4  按下右键:5  弹起右键:6  双击左键:7</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">moveMouse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
+<span class="c1">// 移动鼠标</span>
+<span class="c1">// 参数一 整型，横坐标，非Windows坐标，页面左上角为起始坐标</span>
+<span class="c1">// 参数二 整型，纵坐标，非Windows坐标，页面左上角为起始坐标</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">wheelMouse</span><span class="p">(</span><span class="nx">deltaX</span><span class="p">,</span><span class="w"> </span><span class="nx">deltaY</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
+<span class="c1">// 滚动鼠标</span>
+<span class="c1">// 参数一 整型，水平滚动条移动的距离</span>
+<span class="c1">// 参数二 整型，垂直滚动条移动的距离</span>
+<span class="c1">// 参数三 整型，可选参数，鼠标横坐标位置， 默认为0</span>
+<span class="c1">// 参数四 整型，可选参数，鼠标纵坐标位置， 默认为0</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">clickMouseByXpath</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">);</span>
+<span class="c1">// 通过xpath 点击鼠标(元素中心点)</span>
+<span class="c1">// 参数一 字符串型，元素路径</span>
+<span class="c1">// 参数二 整型，单击左键:1  单击右键:2  按下左键:3  弹起左键:4  按下右键:5  弹起右键:6  双击左键:7</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">moveMouseByXpath</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">// 通过xpath 移动鼠标(元素中心点)</span>
+<span class="c1">// 参数一 字符串型，元素路径</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">wheelMouseByXpath</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">deltaX</span><span class="p">,</span><span class="w"> </span><span class="nx">deltaY</span><span class="p">);</span>
+<span class="c1">// 通过xpath 滚动鼠标</span>
+<span class="c1">// 参数一 字符串型，元素路径</span>
+<span class="c1">// 参数二 整型，水平滚动条移动的距离</span>
+<span class="c1">// 参数三 整型，垂直滚动条移动的距离</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-6-1" class="sphinx-tabs-panel" hidden="true" id="panel-6-6-1" name="6-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id7">
+<h2>截图<a class="headerlink" href="#id7" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-7-7-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-7-7-0" name="7-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-7-7-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-7-7-1" name="7-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-7-7-0" class="sphinx-tabs-panel" id="panel-7-7-0" name="7-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">takeScreenshot</span><span class="p">(</span><span class="nx">xpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="c1">//参数一 字符串型，可选参数，元素路径。 如果指定元素路径，则截取元素图片。默认截取全屏</span>
+<span class="c1">//返回字符串 base-64 编码。 PNG 格式，失败返回null</span>
+
+<span class="sb">`</span>
+<span class="sb">// 代码示例</span>
+<span class="sb">// 截图并且保存图片到电脑</span>
+<span class="sb">// const fs = require(&quot;fs&quot;); //导入fs模块</span>
+<span class="sb">let base64 = await webBot.takeScreenshot();</span>
+<span class="sb">base64 = base64.replace(/^data:image\/\w+;base64,/,&quot;&quot;);</span>
+<span class="sb">let data = new Buffer.from(base64, &quot;base64&quot;);</span>
+<span class="sb">await fs.writeFileSync(&quot;d:\\1.png&quot;, data);</span>
+<span class="sb">`</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-7-7-1" class="sphinx-tabs-panel" hidden="true" id="panel-7-7-1" name="7-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="alert-prompt">
+<h2>alert/prompt弹窗<a class="headerlink" href="#alert-prompt" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-8-8-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-8-8-0" name="8-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-8-8-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-8-8-1" name="8-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-8-8-0" class="sphinx-tabs-panel" id="panel-8-8-0" name="8-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-8-8-1" class="sphinx-tabs-panel" hidden="true" id="panel-8-8-1" name="8-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="cookie">
+<h2>cookie操作<a class="headerlink" href="#cookie" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-9-9-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-9-9-0" name="9-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-9-9-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-9-9-1" name="9-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-9-9-0" class="sphinx-tabs-panel" id="panel-9-9-0" name="9-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getCookies</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="c1">// 获取指定url匹配的cookies</span>
+<span class="c1">// 参数一 字符串型，指定的url http:// 或https:// 起头</span>
+<span class="c1">// 成功返回json格式的字符串，失败返回null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getAllCookies</span><span class="p">();</span>
+<span class="c1">// 获取指定url匹配的cookies</span>
+<span class="c1">// 成功返回json格式的字符串，失败返回null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">setCookie</span><span class="p">(</span><span class="nx">cookieParam</span><span class="p">);</span>
+<span class="c1">// 设置cooki</span>
+<span class="c1">// 参数一 json类型，{&quot;name&quot;:string, &quot;value&quot;:string, &quot;url&quot;:string, &quot;domain&quot;:string, &quot;path&quot;:string, &quot;secure&quot;:boolean, &quot;httpOnly&quot;:boolean, &quot;sameSite&quot;:string, &quot;expires&quot;:number, &quot;priority&quot;:string, &quot;sameParty&quot;:boolean, &quot;sourceScheme&quot;:string, &quot;sourcePort&quot;:number, &quot;partitionKey&quot;:string}  name、value和url必填参数，其他参数可选</span>
+<span class="c1">// 成功返回true，失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">deleteCookies</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{});</span>
+<span class="c1">// 删除指定cookies</span>
+<span class="c1">// 参数一 字符串型，要删除的 Cookie 的名称。</span>
+<span class="c1">// 参数二 json类型，{{url:string, domain:string, path:string}} 可选参数</span>
+<span class="c1">// url 如果指定，则删除所有匹配 url 和 name的Cookie</span>
+<span class="c1">// domain 如果指定，则删除所有匹配 domain 和 name的Cookie</span>
+<span class="c1">// path 如果指定，则删除所有匹配 path 和 name的Cookie</span>
+<span class="c1">// 成功返回true，失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">deleteAllCookies</span><span class="p">();</span>
+<span class="c1">// 删除所有cookies</span>
+<span class="c1">// 成功返回true，失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">clearCache</span><span class="p">();</span>
+<span class="c1">// 清除缓存</span>
+<span class="c1">// 成功返回true，失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-9-9-1" class="sphinx-tabs-panel" hidden="true" id="panel-9-9-1" name="9-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">pass</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="javascript">
+<h2>注入JavaScript<a class="headerlink" href="#javascript" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-10-10-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-10-10-0" name="10-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-10-10-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-10-10-1" name="10-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-10-10-0" class="sphinx-tabs-panel" id="panel-10-10-0" name="10-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">executeScript</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+<span class="c1">// 执行JavaScript 代码</span>
+<span class="c1">// 参数一 字符串型，注入的js代码</span>
+<span class="c1">// 假如注入代码为函数且有return语句，则返回retrun 的值，否则返回null;  注入示例：(function () {return &quot;aibote rpa&quot;})();</span>
+<span class="c1">// 注入的代码含有反斜杠&quot;\&quot;需要转义&quot;\\&quot;</span>
+
+
+<span class="sb">` </span>
+<span class="sb">// 代码示例</span>
+<span class="sb">// 注入js代码</span>
+<span class="sb">await webBot.executeScript(&#39;alert(&quot;aibote&quot;)&#39;);</span>
+
+<span class="sb">// 注入js代码并返回值</span>
+<span class="sb">let ret = await webBot.executeScript(&#39;(function () {return &quot;aibote rpa&quot;})();&#39;);</span>
+<span class="sb">console.log(ret);//输出aibote rpa</span>
+<span class="sb">`</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-10-10-1" class="sphinx-tabs-panel" hidden="true" id="panel-10-10-1" name="10-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id8">
+<h2>浏览器窗口<a class="headerlink" href="#id8" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-11-11-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-11-11-0" name="11-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-11-11-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-11-11-1" name="11-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-11-11-0" class="sphinx-tabs-panel" id="panel-11-11-0" name="11-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">getWindowPos</span><span class="p">();</span>
+<span class="c1">// 获取窗口位置和状态</span>
+<span class="c1">// 成功返回矩形位置和窗口状态，失败返回null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">setWindowPos</span><span class="p">(</span><span class="nx">windowState</span><span class="p">,</span><span class="w"> </span><span class="nx">rect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">left</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">top</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="mf">0</span><span class="p">});</span>
+<span class="c1">// 设置窗口位置和状态</span>
+<span class="c1">// 参数一 字符串型，窗口状态，正常:&quot;normal&quot;  最小化:&quot;minimized&quot;  最大化:&quot;maximized&quot;  全屏:&quot;fullscreen&quot;</span>
+<span class="c1">// 参数二 json类型，可选参数，浏览器窗口位置，此参数仅windowState 值为 &quot;normal&quot; 时有效</span>
+<span class="c1">// 成功返回true，失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-11-11-1" class="sphinx-tabs-panel" hidden="true" id="panel-11-11-1" name="11-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id9">
+<h2>手机浏览器仿真<a class="headerlink" href="#id9" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-12-12-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-12-12-0" name="12-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-12-12-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-12-12-1" name="12-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-12-12-0" class="sphinx-tabs-panel" id="panel-12-12-0" name="12-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">mobileEmulation</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">userAgent</span><span class="p">,</span><span class="w"> </span><span class="nx">platform</span><span class="p">,</span><span class="w"> </span><span class="nx">platformVersion</span><span class="p">,</span><span class="w"> </span><span class="nx">acceptLanguage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">timezoneId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">accuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="c1">//参数一 整型，宽度</span>
+<span class="c1">//参数二 整型，高度</span>
+<span class="c1">//参数三 字符串型，用户代理</span>
+<span class="c1">//参数四 字符串型，系统平台</span>
+<span class="c1">//参数五 字符串型，系统平台版本号</span>
+<span class="c1">//参数六 字符串型，可选参数，语言</span>
+<span class="c1">//参数七 字符串型，可选参数，时区标识</span>
+<span class="c1">//参数八 浮点型，可选参数，纬度</span>
+<span class="c1">//参数九 浮点型，可选参数，经度</span>
+<span class="c1">//参数十 浮点型，可选参数，准确度</span>
+<span class="c1">//成功返回true，失败返回false</span>
+
+<span class="sb">`</span>
+<span class="sb">// 代码示例</span>
+<span class="sb">// 模拟 Android 7.0  地理位置 上海</span>
+<span class="sb">await webBot.mobileEmulation(500, 800, &quot;Mozilla/5.0 (Linux; Android 7.0; SM-G950U Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36&quot;,</span>
+<span class="sb">                            &quot;Android&quot;, &quot;7.0&quot;, &quot;zh-Hans-CN&quot;, &quot;Asia/Shanghai&quot;, 31.230416, 121.473701, 1111);</span>
+<span class="sb">`</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-12-12-1" class="sphinx-tabs-panel" hidden="true" id="panel-12-12-1" name="12-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+<section id="id10">
+<h3>关闭浏览器<a class="headerlink" href="#id10" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-13-13-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-13-13-0" name="13-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-13-13-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-13-13-1" name="13-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-13-13-0" class="sphinx-tabs-panel" id="panel-13-13-0" name="13-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">closeBrowser</span><span class="p">();</span>
+<span class="c1">//总是返回true</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-13-13-1" class="sphinx-tabs-panel" hidden="true" id="panel-13-13-1" name="13-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="webdriver-exe">
+<h3>关闭WebDriver.exe驱动程序<a class="headerlink" href="#webdriver-exe" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-14-14-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-14-14-0" name="14-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-14-14-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-14-14-1" name="14-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-14-14-0" class="sphinx-tabs-panel" id="panel-14-14-0" name="14-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">webBot</span><span class="p">.</span><span class="nx">closeDriver</span><span class="p">();</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-14-14-1" class="sphinx-tabs-panel" hidden="true" id="panel-14-14-1" name="14-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../window_bot/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">WindowBot</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../web_socket_bot/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">WebSocketBot</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">主函数示例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">注册主函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">等待超时</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">页面和导航</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iframe">IFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">元素操作</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">鼠标键盘</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">截图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alert-prompt">alert/prompt弹窗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cookie">cookie操作</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">注入JavaScript</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">浏览器窗口</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">手机浏览器仿真</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">关闭浏览器</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#webdriver-exe">关闭WebDriver.exe驱动程序</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/dev_manual/web_bot/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> 显示源代码
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, Aibote.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

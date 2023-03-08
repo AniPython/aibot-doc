@@ -1,0 +1,2026 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>AndroidBot &#8212; Aibote  文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dev_manual/android_bot/index';</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="WindowBot" href="../window_bot/index.html" />
+    <link rel="prev" title="Aibote 开发手册" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aibote  文档</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        Aibote 基本使用
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Aibote 开发手册
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        Aibote 基本使用
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Aibote 开发手册
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AndroidBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../window_bot/index.html">WindowBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_bot/index.html">WebBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_socket_bot/index.html">WebSocketBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../multimodule_mixing/index.html">多模块混合开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/index.html">界面开发</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Aibote 开发手册</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">AndroidBot</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="androidbot">
+<h1>AndroidBot<a class="headerlink" href="#androidbot" title="此标题的永久链接">#</a></h1>
+<section id="id1">
+<h2>主函数示例<a class="headerlink" href="#id1" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">AndroidBot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;AndroidBot&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 引用AndroidBot模块</span>
+
+<span class="c1">// 注册主函数，安卓端连接脚本会自动调用androidMain，并传递AndroidBot对象。设置服务端监听端口，手机端默认连接端口16678</span>
+<span class="nx">AndroidBot</span><span class="p">.</span><span class="nx">registerMain</span><span class="p">(</span><span class="nx">androidMain</span><span class="p">,</span><span class="w"> </span><span class="mf">16678</span><span class="p">);</span>
+
+<span class="cm">/**用作代码提示，androidMain函数会被多次调用，注意使用全局变量</span>
+<span class="cm"> * @param {AndroidBot} androidBot</span>
+<span class="cm"> */</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">androidMain</span><span class="p">(</span><span class="nx">androidBot</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">setImplicitTimeout</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span><span class="w">  </span><span class="c1">// 设置隐式等待时间</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findColor</span><span class="p">(</span><span class="s2">&quot;#0e76b1&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 查找指定颜色值坐标点</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">point</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># todo</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id2">
+<h2>等待超时<a class="headerlink" href="#id2" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span>
+<span class="c1">// 显式等待</span>
+<span class="c1">// 参数一 整型，等待时间，单位毫秒</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">setImplicitTimeout</span><span class="p">(</span><span class="nx">waitMs</span><span class="p">,</span><span class="w"> </span><span class="nx">intervalMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+<span class="c1">// 隐式等待</span>
+<span class="c1">// 参数一 整型，等待时间，单位毫秒</span>
+<span class="c1">// 参数二 整型，心跳间隔，单位毫秒。可选参数，默认5毫秒</span>
+<span class="c1">// 作用全局，程序起始设置一次即可。并发会影响实际等待时间</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># todo</span>
+<span class="c1"># 显式等待</span>
+<span class="c1"># 参数一 整型，等待时间，单位毫秒</span>
+
+<span class="c1"># todo</span>
+<span class="c1"># 隐式等待</span>
+<span class="c1"># 参数一 整型，等待时间，单位毫秒</span>
+<span class="c1"># 参数二 整型，心跳间隔，单位毫秒。可选参数，默认5毫秒</span>
+<span class="c1"># 作用全局，程序起始设置一次即可。并发会影响实际等待时间</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id3">
+<h2>图片与颜色<a class="headerlink" href="#id3" title="此标题的永久链接">#</a></h2>
+<section id="savescreenshot">
+<h3>截图保存 <code class="docutils literal notranslate"><span class="pre">saveScreenshot()</span></code><a class="headerlink" href="#savescreenshot" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">saveScreenshot</span><span class="p">(</span><span class="nx">savePath</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{});</span>
+<span class="c1">// 参数一 字符串类型，保存图片路径。建议存放在手机 /storage/emulated/0/Android/data/com.aibot.client/files/ 目录下</span>
+<span class="c1">// 参数二 JSON类型，可选参数{{region:[left:number, top:number, right:number, bottom:number], threshold:[thresholdType:number, thresh:number, maxval:number]}} options</span>
+<span class="c1">// region截图区域 [10, 20, 100, 200], 默认全屏</span>
+<span class="c1">// threshold二值化图片, thresholdType算法类型：</span>
+<span class="c1">//   0 THRESH_BINARY算法，当前点值大于阈值thresh时，取最大值maxva，否则设置为0</span>
+<span class="c1">//   1 THRESH_BINARY_INV算法，当前点值大于阈值thresh时，设置为0，否则设置为最大值maxva</span>
+<span class="c1">//   2 THRESH_TOZERO算法，当前点值大于阈值thresh时，不改变，否则设置为0</span>
+<span class="c1">//   3 THRESH_TOZERO_INV算法，当前点值大于阈值thresh时，设置为0，否则不改变</span>
+<span class="c1">//   4 THRESH_TRUNC算法，当前点值大于阈值thresh时，设置为阈值thresh，否则不改变</span>
+<span class="c1">//   5 ADAPTIVE_THRESH_MEAN_C算法，自适应阈值</span>
+<span class="c1">//   6 ADAPTIVE_THRESH_GAUSSIAN_C算法，自适应阈值</span>
+<span class="c1">// thresh阈值，maxval最大值，threshold默认保存原图。thresh和maxval同为255时灰度处理</span>
+<span class="c1">// 成功返回false，失败返回true</span>
+
+<span class="c1">// 截图保存代码示例</span>
+<span class="c1">// 截取全屏，图片保存至/storage/emulated/0/Android/data/com.aibot.client/files/1.png</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">savePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/storage/emulated/0/Android/data/com.aibot.client/files/1.png&quot;</span><span class="p">;</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">saveScreenshot</span><span class="p">(</span><span class="nx">savePath</span><span class="p">);</span>
+
+<span class="c1">// 二值化区域截图，区域起始坐标位置(10,20)，右下角坐标位置(100,200)。二值化使用THRESH_BINARY算法。阈值127，最大值255</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">],</span><span class="w"> </span><span class="nx">threshold</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">127</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">]};</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">saveScreenshot</span><span class="p">(</span><span class="nx">savePath</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save_screenshot</span><span class="p">(</span>
+        <span class="n">image_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">region</span><span class="p">:</span> <span class="n">_Region</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">algorithm</span><span class="p">:</span> <span class="n">_Algorithm</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    保存截图，返回图片地址(手机中)或者 None</span>
+<span class="sd">    :param image_name: 图片名称，保存在手机 /storage/emulated/0/Android/data/com.aibot.client/files/ 路径下；</span>
+<span class="sd">    :param region: 截图区域，默认全屏；</span>
+<span class="sd">    :param algorithm: 处理截图所用算法和参数，默认保存原图；</span>
+<span class="sd">    :return:</span>
+
+<span class="sd">    # 区域相关参数</span>
+<span class="sd">    region = (0, 0, 0, 0) 按元素顺序分别代表：起点x、起点y、终点x、终点y，最终得到一个矩形。</span>
+<span class="sd">    # 算法相关参数</span>
+<span class="sd">    algorithm = (0, 0, 0) # 按元素顺序分别代表：algorithm_type 算法类型、threshold 阈值、max_val 最大值。</span>
+<span class="sd">    threshold 和 max_val 同为 255 时灰度处理.</span>
+<span class="sd">    0   THRESH_BINARY      算法，当前点值大于阈值 threshold 时，取最大值 max_val，否则设置为 0；</span>
+<span class="sd">    1   THRESH_BINARY_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则设置为最大值 max_val；</span>
+<span class="sd">    2   THRESH_TOZERO      算法，当前点值大于阈值 threshold 时，不改变，否则设置为 0；</span>
+<span class="sd">    3   THRESH_TOZERO_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则不改变；</span>
+<span class="sd">    4   THRESH_TRUNC       算法，当前点值大于阈值 threshold 时，设置为阈值 threshold，否则不改变；</span>
+<span class="sd">    5   ADAPTIVE_THRESH_MEAN_C      算法，自适应阈值；</span>
+<span class="sd">    6   ADAPTIVE_THRESH_GAUSSIAN_C  算法，自适应阈值；</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">save_element_screenshot</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="n">xpath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    保存元素截图，返回图片地址(手机中)或者 None</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="findimage">
+<h3>找图 <code class="docutils literal notranslate"><span class="pre">findImage()</span></code><a class="headerlink" href="#findimage" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findImage</span><span class="p">(</span><span class="nx">imagePath</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{});</span>
+<span class="c1">// 找图</span>
+<span class="c1">// 参数一 字符串，小图片路径（手机）</span>
+<span class="c1">// 参数二 JSON类型，可选参数，{{region:[left:number, top:number, right:number, bottom:number], sim:number, threshold:[thresholdType:number, thresh:number, maxval:number]}} options</span>
+<span class="c1">// region 指定区域找图 [10, 20, 100, 200]，region默认全屏</span>
+<span class="c1">// sim浮点型 图片相似度 0.0-1.0，sim默认0.95</span>
+<span class="c1">// threshold二值化图片, thresholdType算法类型：</span>
+<span class="c1">//  0   THRESH_BINARY算法，当前点值大于阈值thresh时，取最大值maxva，否则设置为0</span>
+<span class="c1">//  1   THRESH_BINARY_INV算法，当前点值大于阈值thresh时，设置为0，否则设置为最大值maxva</span>
+<span class="c1">//  2   THRESH_TOZERO算法，当前点值大于阈值thresh时，不改变，否则设置为0</span>
+<span class="c1">//  3   THRESH_TOZERO_INV算法，当前点值大于阈值thresh时，设置为0，否则不改变</span>
+<span class="c1">//  4   THRESH_TRUNC算法，当前点值大于阈值thresh时，设置为阈值thresh，否则不改变</span>
+<span class="c1">//  5   ADAPTIVE_THRESH_MEAN_C算法，自适应阈值</span>
+<span class="c1">//  6   ADAPTIVE_THRESH_GAUSSIAN_C算法，自适应阈值</span>
+<span class="c1">// thresh阈值，maxval最大值，threshold默认保存原图。thresh和maxval同为255时灰度处理</span>
+<span class="c1">// multi 找图数量，默认为1,找单个图片坐标</span>
+<span class="c1">// 成功返回，单个坐标点 [{x:number, y:number}]，多坐标点图[{x1:number, y1:number}, {x2:number, y2:number}...] 失败返回null</span>
+<span class="c1">// 纯黑色小图，有bug？</span>
+
+<span class="c1">// 获取颜色值代码示例</span>
+<span class="c1">// 全屏找图</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">imagePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/storage/emulated/0/Android/data/com.aibot.client/files/1.png&quot;</span><span class="p">;</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findImage</span><span class="p">(</span><span class="nx">imagePath</span><span class="p">);</span>
+
+<span class="c1">// 区域+模糊 找图，区域起始坐标位置(10, 15)，右下角坐标位置(100, 100)。图片相似度设置为95%</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">],</span><span class="w"> </span><span class="nx">sim</span><span class="o">:</span><span class="w"> </span><span class="mf">0.95</span><span class="p">};</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findImage</span><span class="p">(</span><span class="nx">imagePath</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+
+<span class="c1">// 二值化，使用THRESH_BINARY算法，阈值127 最大值255。二值化找图需要在截图工具设置相同的算法、阈值和最大值</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">threshold</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">127</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">]};</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findImage</span><span class="p">(</span><span class="nx">imagePath</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+
+<span class="c1">// 找多张相同图片坐标，返回坐标数组</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">multi</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">};</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findImage</span><span class="p">(</span><span class="nx">imagePath</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_image</span><span class="p">(</span>
+        <span class="n">image_name</span><span class="p">,</span>
+        <span class="n">region</span><span class="p">:</span> <span class="n">_Region</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">algorithm</span><span class="p">:</span> <span class="n">_Algorithm</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">similarity</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_Point</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    寻找图片坐标，在当前屏幕中寻找给定图片中心点的坐标，返回坐标或者 None</span>
+<span class="sd">    :param image_name: 图片名称（手机中）；</span>
+<span class="sd">    :param region: 从指定区域中找图，默认全屏；</span>
+<span class="sd">    :param algorithm: 处理屏幕截图所用的算法，默认原图，注意：给定图片处理时所用的算法，应该和此方法的算法一致；</span>
+<span class="sd">    :param similarity: 相似度，0-1 的浮点数，默认 0.9；</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout；</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout；</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+
+<span class="sd">    # 区域相关参数</span>
+<span class="sd">    region = (0, 0, 0, 0) 按元素顺序分别代表：起点x、起点y、终点x、终点y，最终得到一个矩形。</span>
+<span class="sd">    # 算法相关参数</span>
+<span class="sd">    algorithm = (0, 0, 0) # 按元素顺序分别代表：algorithm_type 算法类型、threshold 阈值、max_val 最大值。</span>
+<span class="sd">    threshold 和 max_val 同为 255 时灰度处理.</span>
+<span class="sd">    0   THRESH_BINARY      算法，当前点值大于阈值 threshold 时，取最大值 max_val，否则设置为 0；</span>
+<span class="sd">    1   THRESH_BINARY_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则设置为最大值 max_val；</span>
+<span class="sd">    2   THRESH_TOZERO      算法，当前点值大于阈值 threshold 时，不改变，否则设置为 0；</span>
+<span class="sd">    3   THRESH_TOZERO_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则不改变；</span>
+<span class="sd">    4   THRESH_TRUNC       算法，当前点值大于阈值 threshold 时，设置为阈值 threshold，否则不改变；</span>
+<span class="sd">    5   ADAPTIVE_THRESH_MEAN_C      算法，自适应阈值；</span>
+<span class="sd">    6   ADAPTIVE_THRESH_GAUSSIAN_C  算法，自适应阈值；</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">find_image_by_opencv</span><span class="p">(</span>
+        <span class="n">image_name</span><span class="p">,</span>
+        <span class="n">region</span><span class="p">:</span> <span class="n">_Region</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">algorithm</span><span class="p">:</span> <span class="n">_Algorithm</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">similarity</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_Point</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    寻找图片坐标，在当前屏幕中寻找给定图片中心点的坐标，返回图片坐标或者 None</span>
+<span class="sd">    与 .find_image() 基本一致，采用 OpenCV 算法</span>
+<span class="sd">    :param image_name: 图片名称（手机中）；</span>
+<span class="sd">    :param region: 从指定区域中找图，默认全屏；</span>
+<span class="sd">    :param algorithm: 处理屏幕截图所用的算法，默认原图，注意：给定图片处理时所用的算法，应该和此方法的算法一致；</span>
+<span class="sd">    :param similarity: 相似度，0-1 的浮点数，默认 0.9；</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+
+<span class="sd">    # 区域相关参数</span>
+<span class="sd">    region = (0, 0, 0, 0) 按元素顺序分别代表：起点x、起点y、终点x、终点y，最终得到一个矩形。</span>
+<span class="sd">    # 算法相关参数</span>
+<span class="sd">    algorithm = (0, 0, 0) # 按元素顺序分别代表：algorithm_type 算法类型、threshold 阈值、max_val 最大值。</span>
+<span class="sd">    threshold 和 max_val 同为 255 时灰度处理.</span>
+<span class="sd">    0   THRESH_BINARY      算法，当前点值大于阈值 threshold 时，取最大值 max_val，否则设置为 0；</span>
+<span class="sd">    1   THRESH_BINARY_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则设置为最大值 max_val；</span>
+<span class="sd">    2   THRESH_TOZERO      算法，当前点值大于阈值 threshold 时，不改变，否则设置为 0；</span>
+<span class="sd">    3   THRESH_TOZERO_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则不改变；</span>
+<span class="sd">    4   THRESH_TRUNC       算法，当前点值大于阈值 threshold 时，设置为阈值 threshold，否则不改变；</span>
+<span class="sd">    5   ADAPTIVE_THRESH_MEAN_C      算法，自适应阈值；</span>
+<span class="sd">    6   ADAPTIVE_THRESH_GAUSSIAN_C  算法，自适应阈值；</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">find_images_by_opencv</span><span class="p">(</span>
+        <span class="n">image_name</span><span class="p">,</span>
+        <span class="n">region</span><span class="p">:</span> <span class="n">_Region</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">algorithm</span><span class="p">:</span> <span class="n">_Algorithm</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">similarity</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="n">multi</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">_Point</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    寻找图片坐标，在当前屏幕中寻找给定图片中心点的坐标，返回坐标列表</span>
+<span class="sd">    与 .find_image() 基本一致，采用 OpenCV 算法，并且可找多个目标。</span>
+<span class="sd">    :param image_name: 图片名称（手机中）；</span>
+<span class="sd">    :param region: 从指定区域中找图，默认全屏；</span>
+<span class="sd">    :param algorithm: 处理屏幕截图所用的算法，默认原图，注意：给定图片处理时所用的算法，应该和此方法的算法一致；</span>
+<span class="sd">    :param similarity: 相似度，0-1 的浮点数，默认 0.9；</span>
+<span class="sd">    :param multi: 目标数量，默认为 1，找到 1 个目标后立即结束；</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+
+<span class="sd">    # 区域相关参数</span>
+<span class="sd">    region = (0, 0, 0, 0) 按元素顺序分别代表：起点x、起点y、终点x、终点y，最终得到一个矩形。</span>
+<span class="sd">    # 算法相关参数</span>
+<span class="sd">    algorithm = (0, 0, 0) # 按元素顺序分别代表：algorithm_type 算法类型、threshold 阈值、max_val 最大值。</span>
+<span class="sd">    threshold 和 max_val 同为 255 时灰度处理.</span>
+<span class="sd">    0   THRESH_BINARY      算法，当前点值大于阈值 threshold 时，取最大值 max_val，否则设置为 0；</span>
+<span class="sd">    1   THRESH_BINARY_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则设置为最大值 max_val；</span>
+<span class="sd">    2   THRESH_TOZERO      算法，当前点值大于阈值 threshold 时，不改变，否则设置为 0；</span>
+<span class="sd">    3   THRESH_TOZERO_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则不改变；</span>
+<span class="sd">    4   THRESH_TRUNC       算法，当前点值大于阈值 threshold 时，设置为阈值 threshold，否则不改变；</span>
+<span class="sd">    5   ADAPTIVE_THRESH_MEAN_C      算法，自适应阈值；</span>
+<span class="sd">    6   ADAPTIVE_THRESH_GAUSSIAN_C  算法，自适应阈值；</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="findanimation">
+<h3>找动态图 <code class="docutils literal notranslate"><span class="pre">findAnimation()</span></code><a class="headerlink" href="#findanimation" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 找动态图</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findAnimation</span><span class="p">(</span><span class="nx">frameRate</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{});</span>
+<span class="c1">// 参数一 整型，前后两张图相隔的时间，单位毫秒</span>
+<span class="c1">// 参数二 JSON类型，可选参数，{{region:[left:number, top:number, right:number, bottom:number]}} options</span>
+<span class="c1">// region 指定区域找图 [10, 20, 100, 200]，region默认全屏</span>
+<span class="c1">// 成功返回，单个坐标点 [{x:number, y:number}]，多坐标点图[{x1:number, y1:number}, {x2:number, y2:number}...] 失败返回null</span>
+
+<span class="c1">// 找动态图代码示例</span>
+<span class="c1">// 在100毫秒内找出图片内变化的位置，其他参数参考findImage函数</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findAnimation</span><span class="p">(</span><span class="mf">100</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-4-1" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-1" name="4-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_dynamic_image</span><span class="p">(</span>
+        <span class="n">interval_ti</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">region</span><span class="p">:</span> <span class="n">_Region</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">_Point</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    找动态图，对比同一张图在不同时刻是否发生变化，返回坐标列表</span>
+<span class="sd">    :param interval_ti: 前后时刻的间隔时间，单位毫秒；</span>
+<span class="sd">    :param region: 在指定区域找图，默认全屏；</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+
+<span class="sd">    # 区域相关参数</span>
+<span class="sd">    region = (0, 0, 0, 0) 按元素顺序分别代表：起点x、起点y、终点x、终点y，最终得到一个矩形。</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="getcolor">
+<h3>获取颜色值 <code class="docutils literal notranslate"><span class="pre">getColor()</span></code><a class="headerlink" href="#getcolor" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getColor</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
+<span class="c1">// 获取颜色值</span>
+<span class="c1">// 参数一 整型，横坐标</span>
+<span class="c1">// 参数二 整型，纵坐标</span>
+<span class="c1">// 成功返回#开头的颜色值，失败返回null</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">get_color</span><span class="p">(</span><span class="n">point</span><span class="p">:</span> <span class="n">_Point_Tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    获取指定坐标点的色值，返回色值字符串(#008577)或者 None</span>
+<span class="sd">    :param point: 坐标点；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="comparecolor">
+<h3>比色 <code class="docutils literal notranslate"><span class="pre">compareColor()</span></code><a class="headerlink" href="#comparecolor" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-6-6-0" name="6-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-6-6-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-6-6-1" name="6-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-6-6-0" class="sphinx-tabs-panel" id="panel-6-6-0" name="6-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 比色</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">compareColor</span><span class="p">(</span><span class="nx">mainX</span><span class="p">,</span><span class="w"> </span><span class="nx">mainY</span><span class="p">,</span><span class="w"> </span><span class="nx">mainColor</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{});</span>
+<span class="c1">// 参数一 整型，主颜色所在的X坐标</span>
+<span class="c1">// 参数二 整型，主颜色所在的Y坐标</span>
+<span class="c1">// 参数三 字符串，#开头的色值</span>
+<span class="c1">// 参数四 JSON类型，可选参数，{{subColors:[[offsetX:number, offsetY:number, strSubColor:string], ...], region:[left:number, top:number, right:number, bottom:number], sim:number}} options</span>
+<span class="c1">// subColors 相对于mainColor 的子色值，[[offsetX, offsetY, &quot;#FFFFFF&quot;], ...]，subColors默认为null</span>
+<span class="c1">// region 指定区域找图 [10, 20, 100, 200]，region默认全屏</span>
+<span class="c1">// sim相似度0.0-1.0，sim默认为1</span>
+<span class="c1">// 成功返回true 失败返回 false</span>
+
+<span class="c1">// 比色代码示例</span>
+<span class="c1">// 多点+模糊比色，主颜色值&quot;#ffff00&quot; 坐标位置(100,150)。主颜色与3个子颜色 点的偏移坐标点。偏移点的计算(子颜色坐标点-主颜色坐标点)。颜色相似度98%</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">subColors</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#a09588&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">9</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#ffffff&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#ffdc92&quot;</span><span class="p">]],</span><span class="w"> </span><span class="nx">sim</span><span class="o">:</span><span class="w"> </span><span class="mf">0.98</span><span class="p">};</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">compareColor</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#ffff00&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-6-1" class="sphinx-tabs-panel" hidden="true" id="panel-6-6-1" name="6-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="findcolor">
+<h3>找色 <code class="docutils literal notranslate"><span class="pre">findColor()</span></code><a class="headerlink" href="#findcolor" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-7-7-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-7-7-0" name="7-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-7-7-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-7-7-1" name="7-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-7-7-0" class="sphinx-tabs-panel" id="panel-7-7-0" name="7-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 找色</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findColor</span><span class="p">(</span><span class="nx">mainColor</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{});</span>
+<span class="c1">// 参数一 字符串，#开头的色值</span>
+<span class="c1">// 参数二 JSON类型，可选参数，{{subColors:[[offsetX:number, offsetY:number, strSubColor:string], ...], region:[left:number, top:number, right:number, bottom:numbe], sim:number}} options</span>
+<span class="c1">// subColors 相对于mainColor 的子色值，[[offsetX, offsetY, &quot;#FFFFFF&quot;], ...]，subColors默认为null</span>
+<span class="c1">// region 指定区域找图 [10, 20, 100, 200]，region默认全屏</span>
+<span class="c1">// sim相似度0.0-1.0，sim默认为1</span>
+<span class="c1">// 成功返回{x:number, y:number} 失败返回null</span>
+
+<span class="c1">// 找色代码示例1</span>
+<span class="c1">// 指定区域+模糊 找色。区域起始坐标位置(10, 20)，右下角坐标位置(100, 200)。颜色相似度设置为95%</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mainColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#ffff00&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">],</span><span class="w"> </span><span class="nx">sim</span><span class="o">:</span><span class="w"> </span><span class="mf">0.95</span><span class="p">};</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findColor</span><span class="p">(</span><span class="nx">mainColor</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+
+<span class="c1">// 找色代码示例2</span>
+<span class="c1">// 多点区域找色。区域起始坐标位置(10, 20)，右下角坐标位置(100, 200)。主颜色与3个子颜色 点的偏移坐标点。偏移点的计算(子颜色坐标点-主颜色坐标点)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mainColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#ffff00&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">],</span><span class="w"> </span><span class="nx">subColors</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#a09588&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">9</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#ffffff&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#ffdc92&quot;</span><span class="p">]]};</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findColor</span><span class="p">(</span><span class="nx">mainColor</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-7-7-1" class="sphinx-tabs-panel" hidden="true" id="panel-7-7-1" name="7-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_color</span><span class="p">(</span>
+        <span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">sub_colors</span><span class="p">:</span> <span class="n">_SubColors</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">region</span><span class="p">:</span> <span class="n">_Region</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">similarity</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_Point</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    获取指定色值的坐标点，返回坐标或者 None</span>
+<span class="sd">    :param color: 颜色字符串，必须以 # 开头，例如：#008577；</span>
+<span class="sd">    :param sub_colors: 辅助定位的其他颜色；</span>
+<span class="sd">    :param region: 在指定区域内找色，默认全屏；</span>
+<span class="sd">    :param similarity: 相似度，0-1 的浮点数，默认 0.9；</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout；</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout；</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+
+<span class="sd">    # 区域相关参数</span>
+<span class="sd">    region = (0, 0, 0, 0) 按元素顺序分别代表：起点x、起点y、终点x、终点y，最终得到一个矩形。</span>
+<span class="sd">    # 算法相关参数</span>
+<span class="sd">    algorithm = (0, 0, 0) # 按元素顺序分别代表：algorithm_type 算法类型、threshold 阈值、max_val 最大值。</span>
+<span class="sd">    threshold 和 max_val 同为 255 时灰度处理.</span>
+<span class="sd">    0   THRESH_BINARY      算法，当前点值大于阈值 threshold 时，取最大值 max_val，否则设置为 0；</span>
+<span class="sd">    1   THRESH_BINARY_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则设置为最大值 max_val；</span>
+<span class="sd">    2   THRESH_TOZERO      算法，当前点值大于阈值 threshold 时，不改变，否则设置为 0；</span>
+<span class="sd">    3   THRESH_TOZERO_INV  算法，当前点值大于阈值 threshold 时，设置为 0，否则不改变；</span>
+<span class="sd">    4   THRESH_TRUNC       算法，当前点值大于阈值 threshold 时，设置为阈值 threshold，否则不改变；</span>
+<span class="sd">    5   ADAPTIVE_THRESH_MEAN_C      算法，自适应阈值；</span>
+<span class="sd">    6   ADAPTIVE_THRESH_GAUSSIAN_C  算法，自适应阈值；</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+<section id="ocr">
+<h2>OCR系统<a class="headerlink" href="#ocr" title="此标题的永久链接">#</a></h2>
+<section id="findwords">
+<h3>获取文字坐标 <code class="docutils literal notranslate"><span class="pre">findWords()</span></code><a class="headerlink" href="#findwords" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-8-8-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-8-8-0" name="8-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-8-8-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-8-8-1" name="8-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-8-8-0" class="sphinx-tabs-panel" id="panel-8-8-0" name="8-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findWords</span><span class="p">(</span><span class="nx">words</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<span class="c1">// 参数一 字符串类型，要查找的文字</span>
+<span class="c1">// 参数二 JSON类型，可选参数 {region:[left:number, top:number, right:number, bottom:number], scale:number}} options</span>
+<span class="c1">// region 指定区域 [10, 20, 100, 200]，region默认全屏</span>
+<span class="c1">// threshold二值化图片, thresholdType算法类型：</span>
+<span class="c1">//   0   THRESH_BINARY算法，当前点值大于阈值thresh时，取最大值maxva，否则设置为0</span>
+<span class="c1">//   1   THRESH_BINARY_INV算法，当前点值大于阈值thresh时，设置为0，否则设置为最大值maxva</span>
+<span class="c1">//   2   THRESH_TOZERO算法，当前点值大于阈值thresh时，不改变，否则设置为0</span>
+<span class="c1">//   3   THRESH_TOZERO_INV算法，当前点值大于阈值thresh时，设置为0，否则不改变</span>
+<span class="c1">//   4   THRESH_TRUNC算法，当前点值大于阈值thresh时，设置为阈值thresh，否则不改变</span>
+<span class="c1">//   5   ADAPTIVE_THRESH_MEAN_C算法，自适应阈值</span>
+<span class="c1">//   6   ADAPTIVE_THRESH_GAUSSIAN_C算法，自适应阈值</span>
+<span class="c1">// thresh阈值，maxval最大值，threshold默认保存原图。thresh和maxval同为255时灰度处理</span>
+<span class="c1">// scale浮点型 图片缩放率, 默认为 1.0 原大小。大于1.0放大，小于1.0缩小，不能为负数。仅在区域识别有效</span>
+<span class="c1">// 成功功返回数组[{x:number, y:number}, ...]，文字所在的坐标点， 失败返回null</span>
+
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 区域找字</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findWords</span><span class="p">(</span><span class="s2">&quot;rpa&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">]});</span>
+
+<span class="c1">// 二值化处理后找字</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">findWords</span><span class="p">(</span><span class="s1">&#39;rpa&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">threshold</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">]});</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-8-8-1" class="sphinx-tabs-panel" hidden="true" id="panel-8-8-1" name="8-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_text</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">region</span><span class="p">:</span> <span class="n">_Region</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">_Point</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    查找文字所在的坐标，返回坐标列表（坐标是文本区域中心位置）</span>
+<span class="sd">    :param text: 要查找的文字；</span>
+<span class="sd">    :param region: 识别区域，默认全屏；</span>
+<span class="sd">    :param scale: 图片缩放率，默认为 1.0，1.0 以下为缩小，1.0 以上为放大；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="getwords">
+<h3>获取屏幕文字 <code class="docutils literal notranslate"><span class="pre">getWords()</span></code><a class="headerlink" href="#getwords" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-9-9-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-9-9-0" name="9-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-9-9-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-9-9-1" name="9-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-9-9-0" class="sphinx-tabs-panel" id="panel-9-9-0" name="9-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 获取屏幕文字</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getWords</span><span class="p">(</span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<span class="c1">// 参数一 JSON类型，可选参数 {region:[left:number, top:number, right:number, bottom:number], scale:number}} options</span>
+<span class="c1">// region 指定区域 [10, 20, 100, 200]，region默认全屏</span>
+<span class="c1">// threshold二值化图片, thresholdType算法类型：</span>
+<span class="c1">//    0   THRESH_BINARY算法，当前点值大于阈值thresh时，取最大值maxva，否则设置为0</span>
+<span class="c1">//    1   THRESH_BINARY_INV算法，当前点值大于阈值thresh时，设置为0，否则设置为最大值maxva</span>
+<span class="c1">//    2   THRESH_TOZERO算法，当前点值大于阈值thresh时，不改变，否则设置为0</span>
+<span class="c1">//    3   THRESH_TOZERO_INV算法，当前点值大于阈值thresh时，设置为0，否则不改变</span>
+<span class="c1">//    4   THRESH_TRUNC算法，当前点值大于阈值thresh时，设置为阈值thresh，否则不改变</span>
+<span class="c1">//    5   ADAPTIVE_THRESH_MEAN_C算法，自适应阈值</span>
+<span class="c1">//    6   ADAPTIVE_THRESH_GAUSSIAN_C算法，自适应阈值</span>
+<span class="c1">//    thresh阈值，maxval最大值，threshold默认保存原图。thresh和maxval同为255时灰度处理</span>
+<span class="c1">// scale浮点型 图片缩放率, 默认为 1.0 原大小。大于1.0放大，小于1.0缩小，不能为负数。仅在区域识别有效</span>
+<span class="c1">// 成功返回手机上的文字, 失败返回null</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-9-9-1" class="sphinx-tabs-panel" hidden="true" id="panel-9-9-1" name="9-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_text</span><span class="p">(</span><span class="n">region</span><span class="p">:</span> <span class="n">_Region</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    通过 OCR 识别屏幕中的文字，返回文字列表</span>
+<span class="sd">    :param region: 识别区域，默认全屏；</span>
+<span class="sd">    :param scale: 图片缩放率，默认为 1.0，1.0 以下为缩小，1.0 以上为放大；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="test">
+<h3>测试 <code class="docutils literal notranslate"><span class="pre">test()</span></code><a class="headerlink" href="#test" title="此标题的永久链接">#</a></h3>
+<dl class="js function">
+<dt class="sig sig-object js" id="calculateArea">
+<span class="sig-name descname"><span class="n"><span class="pre">calculateArea</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculateArea" title="永久链接至目标">#</a></dt>
+<dd><p>Calculates the area of a rectangle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>number</em>) – The width of the rectangle.</p></li>
+<li><p><strong>height</strong> (<em>number</em>) – The height of the rectangle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>number</strong> – The area of the rectangle.</p>
+</dd>
+</dl>
+<p><strong>Examples:</strong></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Example usage:</span>
+<span class="c1">// Returns 20</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculateArea</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AiBot.AndroidBotMain.any_elements_exists">
+<span class="sig-prename descclassname"><span class="pre">AndroidBotMain.</span></span><span class="sig-name descname"><span class="pre">any_elements_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xpath_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#AiBot.AndroidBotMain.any_elements_exists" title="永久链接至目标">#</a></dt>
+<dd><p>遍历列表中的元素，只要任意一个元素存在就返回 True</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xpath_list</strong> – xpath 列表</p></li>
+<li><p><strong>wait_time</strong> – 等待时间，默认取 self.wait_timeout</p></li>
+<li><p><strong>interval_time</strong> – 轮询间隔时间，默认取 self.interval_timeout</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>任意一个元素存在就返回 True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-10-10-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-10-10-0" name="10-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-10-10-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-10-10-1" name="10-1" role="tab" tabindex="-1">Python</button><button aria-controls="panel-10-10-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-10-10-2" name="10-2" role="tab" tabindex="-1">autofunctionjs</button><button aria-controls="panel-10-10-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-10-10-3" name="10-3" role="tab" tabindex="-1">autofunctionpy</button></div><div aria-labelledby="tab-10-10-0" class="sphinx-tabs-panel" id="panel-10-10-0" name="10-0" role="tabpanel" tabindex="0"><dl class="js function">
+<dt class="sig sig-object js" id="square">
+<span class="sig-name descname"><span class="n"><span class="pre">square</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#square" title="永久链接至目标">#</a></dt>
+<dd><p>A function that returns the square of a given number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num</strong> (<em>number</em>) – The number to be squared.</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>number</strong> – The square of the given number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div><div aria-labelledby="tab-10-10-1" class="sphinx-tabs-panel" hidden="true" id="panel-10-10-1" name="10-1" role="tabpanel" tabindex="0"><dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">AndroidBotMain.</span></span><span class="sig-name descname"><span class="pre">any_elements_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xpath_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#id0" title="永久链接至目标">#</a></dt>
+<dd><p>遍历列表中的元素，只要任意一个元素存在就返回 True</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xpath_list</strong> – xpath 列表</p></li>
+<li><p><strong>wait_time</strong> – 等待时间，默认取 self.wait_timeout</p></li>
+<li><p><strong>interval_time</strong> – 轮询间隔时间，默认取 self.interval_timeout</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>任意一个元素存在就返回 True</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div><div aria-labelledby="tab-10-10-2" class="sphinx-tabs-panel" hidden="true" id="panel-10-10-2" name="10-2" role="tabpanel" tabindex="0"><dl class="js function">
+<dt class="sig sig-object js" id="calculateArea">
+<span class="sig-name descname"><span class="n"><span class="pre">calculateArea</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculateArea" title="永久链接至目标">#</a></dt>
+<dd><p>Calculates the area of a rectangle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>number</em>) – The width of the rectangle.</p></li>
+<li><p><strong>height</strong> (<em>number</em>) – The height of the rectangle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>number</strong> – The area of the rectangle.</p>
+</dd>
+</dl>
+<p><strong>Examples:</strong></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Example usage:</span>
+<span class="c1">// Returns 20</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculateArea</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div><div aria-labelledby="tab-10-10-3" class="sphinx-tabs-panel" hidden="true" id="panel-10-10-3" name="10-3" role="tabpanel" tabindex="0"><dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-prename descclassname"><span class="pre">AndroidBotMain.</span></span><span class="sig-name descname"><span class="pre">any_elements_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xpath_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#id4" title="永久链接至目标">#</a></dt>
+<dd><p>遍历列表中的元素，只要任意一个元素存在就返回 True</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xpath_list</strong> – xpath 列表</p></li>
+<li><p><strong>wait_time</strong> – 等待时间，默认取 self.wait_timeout</p></li>
+<li><p><strong>interval_time</strong> – 轮询间隔时间，默认取 self.interval_timeout</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>任意一个元素存在就返回 True</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></div>
+</section>
+</section>
+<section id="id5">
+<h2>点击手势<a class="headerlink" href="#id5" title="此标题的永久链接">#</a></h2>
+<section id="click">
+<h3>单击 <code class="docutils literal notranslate"><span class="pre">click()</span></code><a class="headerlink" href="#click" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-11-11-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-11-11-0" name="11-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-11-11-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-11-11-1" name="11-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-11-11-0" class="sphinx-tabs-panel" id="panel-11-11-0" name="11-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
+<span class="c1">// 点击坐标</span>
+<span class="c1">// 参数一 整型，横坐标</span>
+<span class="c1">// 参数二 整型，纵坐标</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-11-11-1" class="sphinx-tabs-panel" hidden="true" id="panel-11-11-1" name="11-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="n">point</span><span class="p">:</span> <span class="n">_Point_Tuple</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    点击坐标</span>
+<span class="sd">    :param point: 坐标；</span>
+<span class="sd">    :param offset_x: 坐标 x 轴偏移量；</span>
+<span class="sd">    :param offset_y: 坐标 y 轴偏移量；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="doubleclick">
+<h3>双击 <code class="docutils literal notranslate"><span class="pre">doubleClick()</span></code><a class="headerlink" href="#doubleclick" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-12-12-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-12-12-0" name="12-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-12-12-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-12-12-1" name="12-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-12-12-0" class="sphinx-tabs-panel" id="panel-12-12-0" name="12-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">doubleClick</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
+<span class="c1">// 双击坐标</span>
+<span class="c1">// 参数一 整型，横坐标</span>
+<span class="c1">// 参数二 整型，纵坐标</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-12-12-1" class="sphinx-tabs-panel" hidden="true" id="panel-12-12-1" name="12-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_click</span><span class="p">(</span><span class="n">point</span><span class="p">:</span> <span class="n">_Point_Tuple</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    双击坐标</span>
+<span class="sd">    :param point: 坐标；</span>
+<span class="sd">    :param offset_x: 坐标 x 轴偏移量；</span>
+<span class="sd">    :param offset_y: 坐标 y 轴偏移量；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="press">
+<h3>按下 <code class="docutils literal notranslate"><span class="pre">press()</span></code><a class="headerlink" href="#press" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-13-13-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-13-13-0" name="13-0" role="tab" tabindex="0">JavaScript</button></div><div aria-labelledby="tab-13-13-0" class="sphinx-tabs-panel" id="panel-13-13-0" name="13-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">press</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="p">);</span>
+<span class="c1">// 手指按下</span>
+<span class="c1">// 参数一 整型，横坐标</span>
+<span class="c1">// 参数二 整型，纵坐标</span>
+<span class="c1">// 参数三 整型，按下时长，单位毫秒</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="longclick">
+<h3>长按 <code class="docutils literal notranslate"><span class="pre">longClick()</span></code><a class="headerlink" href="#longclick" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-14-14-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-14-14-0" name="14-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-14-14-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-14-14-1" name="14-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-14-14-0" class="sphinx-tabs-panel" id="panel-14-14-0" name="14-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">longClick</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="p">);</span>
+<span class="c1">// 长按坐标</span>
+<span class="c1">// 参数一 整型，横坐标</span>
+<span class="c1">// 参数二 整型，纵坐标</span>
+<span class="c1">// 参数三 整型，长按时长，单位毫秒</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 在(100,150)坐标位置 长按3秒</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">longClick</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-14-14-1" class="sphinx-tabs-panel" hidden="true" id="panel-14-14-1" name="14-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">long_click</span><span class="p">(</span><span class="n">point</span><span class="p">:</span> <span class="n">_Point_Tuple</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    长按坐标</span>
+<span class="sd">    :param point: 坐标；</span>
+<span class="sd">    :param duration: 按住时长，单位秒；</span>
+<span class="sd">    :param offset_x: 坐标 x 轴偏移量；</span>
+<span class="sd">    :param offset_y: 坐标 y 轴偏移量；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="release">
+<h3>抬起 <code class="docutils literal notranslate"><span class="pre">release()</span></code><a class="headerlink" href="#release" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-15-15-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-15-15-0" name="15-0" role="tab" tabindex="0">JavaScript</button></div><div aria-labelledby="tab-15-15-0" class="sphinx-tabs-panel" id="panel-15-15-0" name="15-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">release</span><span class="p">();</span>
+<span class="c1">// 手指抬起</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 拖动操作，起始坐标位置(100,150) 拖动至(200, 300)， 拖动时间1000毫秒</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">press</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">release</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="move">
+<h3>移动 <code class="docutils literal notranslate"><span class="pre">move()</span></code><a class="headerlink" href="#move" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-16-16-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-16-16-0" name="16-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-16-16-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-16-16-1" name="16-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-16-16-0" class="sphinx-tabs-panel" id="panel-16-16-0" name="16-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="p">);</span>
+<span class="c1">// 手指移动</span>
+<span class="c1">// 参数一 整型，横坐标</span>
+<span class="c1">// 参数二 整型，纵坐标</span>
+<span class="c1">// 参数三 整型，移动时长，单位毫秒</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-16-16-1" class="sphinx-tabs-panel" hidden="true" id="panel-16-16-1" name="16-1" role="tabpanel" tabindex="0"></div></div>
+</section>
+<section id="swipe">
+<h3>滑动 <code class="docutils literal notranslate"><span class="pre">swipe()</span></code><a class="headerlink" href="#swipe" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-17-17-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-17-17-0" name="17-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-17-17-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-17-17-1" name="17-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-17-17-0" class="sphinx-tabs-panel" id="panel-17-17-0" name="17-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">swipe</span><span class="p">(</span><span class="nx">startX</span><span class="p">,</span><span class="w"> </span><span class="nx">startY</span><span class="p">,</span><span class="w"> </span><span class="nx">endX</span><span class="p">,</span><span class="w"> </span><span class="nx">endY</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="p">);</span>
+<span class="c1">// 滑动坐标</span>
+<span class="c1">// 参数一 整型，起始横坐标</span>
+<span class="c1">// 参数二 整型，起始纵坐标</span>
+<span class="c1">// 参数三 整型，结束横坐标</span>
+<span class="c1">// 参数四 整型，结束纵坐标</span>
+<span class="c1">// 参数五 整型，滑动时长，单位毫秒</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 滑动屏幕。起始坐标位置(100,150) 滑动至(200, 300)， 滑动时间2000毫秒</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">swipe</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-17-17-1" class="sphinx-tabs-panel" hidden="true" id="panel-17-17-1" name="17-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swipe</span><span class="p">(</span><span class="n">start_point</span><span class="p">:</span> <span class="n">_Point_Tuple</span><span class="p">,</span> <span class="n">end_point</span><span class="p">:</span> <span class="n">_Point_Tuple</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    滑动坐标</span>
+<span class="sd">    :param start_point: 起始坐标；</span>
+<span class="sd">    :param end_point: 结束坐标；</span>
+<span class="sd">    :param duration: 滑动时长，单位秒；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="dispatchgesture">
+<h3>执行手势 <code class="docutils literal notranslate"><span class="pre">dispatchGesture()</span></code><a class="headerlink" href="#dispatchgesture" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-18-18-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-18-18-0" name="18-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-18-18-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-18-18-1" name="18-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-18-18-0" class="sphinx-tabs-panel" id="panel-18-18-0" name="18-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">dispatchGesture</span><span class="p">(</span><span class="nx">gesturePath</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="p">);</span>
+<span class="c1">// 执行手势</span>
+<span class="c1">// 参数一 JSON类型，手势路径 {[[x:number, y:number], [x1:number, y1:number]...]}</span>
+<span class="c1">// 参数二 整型，手势时长，单位毫秒</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 执行手势，起始坐标位置(100,150) 至(200, 300)最后滑动至(300, 500) 手势时间3000毫秒</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">gesturePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">]];</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">dispatchGesture</span><span class="p">(</span><span class="nx">gesturePath</span><span class="p">,</span><span class="w"> </span><span class="mf">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-18-18-1" class="sphinx-tabs-panel" hidden="true" id="panel-18-18-1" name="18-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gesture</span><span class="p">(</span><span class="n">gesture_path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">_Point_Tuple</span><span class="p">],</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    执行手势</span>
+<span class="sd">    :param gesture_path: 手势路径，由一系列坐标点组成</span>
+<span class="sd">    :param duration: 手势执行时长, 单位秒</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="dispatchgestures">
+<h3>执行多个手势 <code class="docutils literal notranslate"><span class="pre">dispatchGestures()</span></code><a class="headerlink" href="#dispatchgestures" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-19-19-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-19-19-0" name="19-0" role="tab" tabindex="0">JavaScript</button></div><div aria-labelledby="tab-19-19-0" class="sphinx-tabs-panel" id="panel-19-19-0" name="19-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">dispatchGestures</span><span class="p">(</span><span class="nx">gesturesPath</span><span class="p">);</span>
+<span class="c1">// 执行多个手势</span>
+<span class="c1">// 参数一 JSON类型，手势路径 {[[duration:number, [x:number, y:number], [x1:number, y1:number]...],[duration:number, [x:number, y:number], [x1:number, y1:number]...],...]}</span>
+<span class="c1">// duration 手势时长</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 执行多个手势，手势1，起始坐标位置(100,100) 至(200, 200) 手势时间1000毫秒。手势2，起始坐标位置(300,300) 至(500, 500) 手势时间1000毫秒</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">gesturesPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">1000</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">]],</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">1000</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">]]</span>
+<span class="p">];</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">dispatchGestures</span><span class="p">(</span><span class="nx">gesturesPath</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+<section id="id6">
+<h2>发送文本<a class="headerlink" href="#id6" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-20-20-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-20-20-0" name="20-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-20-20-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-20-20-1" name="20-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-20-20-0" class="sphinx-tabs-panel" id="panel-20-20-0" name="20-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">sendKeys</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="c1">//参数一 字符串类型，发送的文本，需要打开aibote输入法</span>
+<span class="c1">//成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-20-20-1" class="sphinx-tabs-panel" hidden="true" id="panel-20-20-1" name="20-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id7">
+<h2>发送按键<a class="headerlink" href="#id7" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-21-21-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-21-21-0" name="21-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-21-21-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-21-21-1" name="21-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-21-21-0" class="sphinx-tabs-panel" id="panel-21-21-0" name="21-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">back</span><span class="p">();</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">home</span><span class="p">();</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">recents</span><span class="p">();</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">sendVk</span><span class="p">(</span><span class="nx">keyCode</span><span class="p">);</span>
+<span class="c1">// 参数一 整型，发送按键值，需要打开aibote输入法。例如：回车：66</span>
+<span class="c1">// 按键对照表 https://blog.csdn.net/yaoyaozaiye/article/details/122826340</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 发送搜索键</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">sendVk</span><span class="p">(</span><span class="mf">84</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-21-21-1" class="sphinx-tabs-panel" hidden="true" id="panel-21-21-1" name="21-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="app">
+<h2>启动APP<a class="headerlink" href="#app" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-22-22-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-22-22-0" name="22-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-22-22-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-22-22-1" name="22-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-22-22-0" class="sphinx-tabs-panel" id="panel-22-22-0" name="22-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">startApp</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="c1">//参数一 字符串类型，包名或者app名称</span>
+<span class="c1">//成功返回true 失败返回false</span>
+
+
+<span class="c1">// 代码示例</span>
+<span class="c1">//通过名称启动</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">startApp</span><span class="p">(</span><span class="s2">&quot;aibote&quot;</span><span class="p">);</span>
+
+<span class="c1">//通过包名启动</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">startApp</span><span class="p">(</span><span class="s2">&quot;com.aibot.client&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-22-22-1" class="sphinx-tabs-panel" hidden="true" id="panel-22-22-1" name="22-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id8">
+<h2>屏幕大小<a class="headerlink" href="#id8" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-23-23-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-23-23-0" name="23-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-23-23-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-23-23-1" name="23-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-23-23-0" class="sphinx-tabs-panel" id="panel-23-23-0" name="23-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getWindowSize</span><span class="p">();</span>
+<span class="c1">//成功返回{width:number, height:number}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-23-23-1" class="sphinx-tabs-panel" hidden="true" id="panel-23-23-1" name="23-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id9">
+<h2>图片大小<a class="headerlink" href="#id9" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-24-24-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-24-24-0" name="24-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-24-24-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-24-24-1" name="24-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-24-24-0" class="sphinx-tabs-panel" id="panel-24-24-0" name="24-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getImageSize</span><span class="p">(</span><span class="nx">imagePath</span><span class="p">);</span>
+<span class="c1">// 参数一 字符串类型，图片路径</span>
+<span class="c1">// 成功返回{width:number, height:number}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-24-24-1" class="sphinx-tabs-panel" hidden="true" id="panel-24-24-1" name="24-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id">
+<h2>获取安卓ID<a class="headerlink" href="#id" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-25-25-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-25-25-0" name="25-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-25-25-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-25-25-1" name="25-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-25-25-0" class="sphinx-tabs-panel" id="panel-25-25-0" name="25-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getAndroidId</span><span class="p">();</span>
+<span class="c1">//成功返回安卓手机ID</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-25-25-1" class="sphinx-tabs-panel" hidden="true" id="panel-25-25-1" name="25-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="url">
+<h2>URL请求<a class="headerlink" href="#url" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-26-26-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-26-26-0" name="26-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-26-26-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-26-26-1" name="26-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-26-26-0" class="sphinx-tabs-panel" id="panel-26-26-0" name="26-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">urlRequest</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">requestType</span><span class="p">,</span><span class="w"> </span><span class="nx">contentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;null&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">postData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;null&quot;</span><span class="p">)</span>
+<span class="c1">// 参数一 字符串类型，请求的地址，http:// 或者 https://开头</span>
+<span class="c1">// 参数二 字符串类型，请求类型，GET或者POST</span>
+<span class="c1">// 参数三 字符串类型，可选参数，用作POST 内容类型</span>
+<span class="c1">// 参数四 字符串类型，可选参数，用作POST 提交的数据</span>
+<span class="c1">// 返回请求数据内容</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// GET请求</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">urlRequest</span><span class="p">(</span><span class="s2">&quot;https://www.baidu.com/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;GET&quot;</span><span class="p">);</span>
+
+<span class="c1">// POST请求</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://tool.chinaz.com/ajaxsync.aspx?callback=jQuery111308936882726209896_1669640902645&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">requestType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">contentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">postData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;toolbox_urls=www.aibote.com&quot;</span><span class="p">;</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">urlRequest</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">requestType</span><span class="p">,</span><span class="w"> </span><span class="nx">contentType</span><span class="p">,</span><span class="w"> </span><span class="nx">postData</span><span class="p">);</span>
+
+<span class="c1">//POST请求 json格式数据</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://www.pushplus.plus/send&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">requestType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">contentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;123456&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;打卡结果通知&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">postData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`{&quot;token&quot;:</span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">, &quot;title&quot;:</span><span class="si">${</span><span class="nx">title</span><span class="si">}</span><span class="sb">}`</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">urlRequest</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">requestType</span><span class="p">,</span><span class="w"> </span><span class="nx">contentType</span><span class="p">,</span><span class="w"> </span><span class="nx">postData</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-26-26-1" class="sphinx-tabs-panel" hidden="true" id="panel-26-26-1" name="26-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="toast">
+<h2>Toast消息提示<a class="headerlink" href="#toast" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-27-27-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-27-27-0" name="27-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-27-27-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-27-27-1" name="27-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-27-27-0" class="sphinx-tabs-panel" id="panel-27-27-0" name="27-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">showToast</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="p">)</span>
+<span class="c1">//参数一 字符串类型，Toast提示的内容</span>
+<span class="c1">//参数二 整型，显示时长，最大时长3500毫秒</span>
+<span class="c1">//成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-27-27-1" class="sphinx-tabs-panel" hidden="true" id="panel-27-27-1" name="27-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id10">
+<h2>验证码系统<a class="headerlink" href="#id10" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-28-28-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-28-28-0" name="28-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-28-28-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-28-28-1" name="28-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-28-28-0" class="sphinx-tabs-panel" id="panel-28-28-0" name="28-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getCaptcha</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span><span class="w"> </span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">softId</span><span class="p">,</span><span class="w"> </span><span class="nx">codeType</span><span class="p">,</span><span class="w"> </span><span class="nx">lenMin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="c1">// 识别验证码</span>
+<span class="c1">// 参数一 字符串类型，图片文件路径</span>
+<span class="c1">// 参数二 字符串类型，用户名</span>
+<span class="c1">// 参数三 字符串类型，密码</span>
+<span class="c1">// 参数四 字符串类型，软件ID</span>
+<span class="c1">// 参数四 字符串类型，图片类型 参考https://www.chaojiying.com/price.html</span>
+<span class="c1">// 参数五 字符串类型，最小位数 默认0为不启用,图片类型为可变位长时可启用这个参数</span>
+<span class="c1">// 返回JSON类型{{err_no:number, err_str:string, pic_id:string, pic_str:string, md5:string}}</span>
+<span class="c1">// err_no,(数值) 返回代码  为0 表示正常，错误代码 参考https://www.chaojiying.com/api-23.html</span>
+<span class="c1">// err_str,(字符串) 中文描述的返回信息</span>
+<span class="c1">// pic_id,(字符串) 图片标识号，或图片id号</span>
+<span class="c1">// pic_str,(字符串) 识别出的结果</span>
+<span class="c1">// md5,(字符串) md5校验值,用来校验此条数据返回是否真实有效</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 通过超级鹰第三方平台接口，识别验证码。username, password, softId由第三方平台提供</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/storage/emulated/0/Android/data/com.aibot.client/files/1.png&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getCaptcha</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;username&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1902&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="s2">&quot;err_no&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 没有错误信息，输出识别结果</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="s2">&quot;pic_str&quot;</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">errorCaptcha</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">softId</span><span class="p">,</span><span class="w"> </span><span class="nx">picId</span><span class="p">);</span>
+<span class="c1">// 识别报错返分</span>
+<span class="c1">// 参数一 字符串类型，用户名</span>
+<span class="c1">// 参数二 字符串类型，密码</span>
+<span class="c1">// 参数三 字符串类型，软件ID</span>
+<span class="c1">// 参数四 字符串类型，图片ID 对应 getCaptcha返回值的pic_id 字段</span>
+<span class="c1">// 返回JSON类型{{err_no:number, err_str:string}}</span>
+<span class="c1">// err_no,(数值) 返回代码</span>
+<span class="c1">// err_str,(字符串) 中文描述的返回信息</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">scoreCaptcha</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">);</span>
+<span class="c1">// 查询验证码剩余题分</span>
+<span class="c1">// 参数一 字符串类型，用户名</span>
+<span class="c1">// 参数二 字符串类型，密码</span>
+<span class="c1">// 返回JSON类型{{err_no:number, err_str:string, tifen:string, tifen_lock:string}}</span>
+<span class="c1">// err_no,(数值) 返回代码</span>
+<span class="c1">// err_str,(字符串) 中文描述的返回信息</span>
+<span class="c1">// tifen,(数值) 题分</span>
+<span class="c1">// tifen_lock,(数值) 锁定题分</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-28-28-1" class="sphinx-tabs-panel" hidden="true" id="panel-28-28-1" name="28-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id11">
+<h2>元素操作<a class="headerlink" href="#id11" title="此标题的永久链接">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>文本、描述xpath 支持 &#64;containsText 和 &#64;containsDesc 模糊定位</p>
+</div>
+<section id="clickelement">
+<h3>点击元素 <code class="docutils literal notranslate"><span class="pre">clickElement()</span></code><a class="headerlink" href="#clickelement" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-29-29-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-29-29-0" name="29-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-29-29-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-29-29-1" name="29-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-29-29-0" class="sphinx-tabs-panel" id="panel-29-29-0" name="29-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">clickElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">// 点击元素</span>
+<span class="c1">// 参数一 字符串类型，元素路径</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 相对路径点击元素</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">xpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;com.example.android.notepad/com.example.android.notepad:id=fab_add&quot;</span><span class="p">;</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">clickElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+
+<span class="c1">// 文本模糊匹配点击元素</span>
+<span class="nx">xpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;com.huawei.android.launcher/android.widget.TextView@containsText=ibote&quot;</span><span class="p">;</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">clickElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+
+<span class="c1">// 描述模糊匹配点击元素</span>
+<span class="nx">xpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;com.huawei.android.launcher/android.widget.TextView@containsDesc=ibote&quot;</span><span class="p">;</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">clickElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-29-29-1" class="sphinx-tabs-panel" hidden="true" id="panel-29-29-1" name="29-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">click_element</span><span class="p">(</span>
+        <span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    点击元素</span>
+<span class="sd">    :param xpath:</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="clickelementbyslide">
+<h3>滑动并点击元素 <code class="docutils literal notranslate"><span class="pre">clickElementBySlide()</span></code><a class="headerlink" href="#clickelementbyslide" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-30-30-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-30-30-0" name="30-0" role="tab" tabindex="0">Python</button></div><div aria-labelledby="tab-30-30-0" class="sphinx-tabs-panel" id="panel-30-30-0" name="30-0" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">click_element_by_slide</span><span class="p">(</span>
+        <span class="n">xpath</span><span class="p">,</span>
+        <span class="n">distance</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">direction</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">999</span><span class="p">,</span>
+        <span class="n">end_flag_xpath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    滑动列表，查找并点击指定元素</span>
+<span class="sd">    :param xpath:</span>
+<span class="sd">    :param distance: 滑动距离，默认 1000</span>
+<span class="sd">    :param duration: 滑动时间，默认 0.5 秒</span>
+<span class="sd">    :param direction: 滑动方向，默认为 1； 1=上滑，2=下滑</span>
+<span class="sd">    :param count: 滑动次数</span>
+<span class="sd">    :param end_flag_xpath: 结束标志 xpath</span>
+<span class="sd">    :param wait_time: 等待时间，默认 10 分钟</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认 0.5 秒</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="clickanyelements">
+<h3>遍历点击元素 <code class="docutils literal notranslate"><span class="pre">clickAnyElements</span></code><a class="headerlink" href="#clickanyelements" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-31-31-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-31-31-0" name="31-0" role="tab" tabindex="0">Python</button></div><div aria-labelledby="tab-31-31-0" class="sphinx-tabs-panel" id="panel-31-31-0" name="31-0" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">click_any_elements</span><span class="p">(</span>
+        <span class="n">xpath_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    遍历点击列表中的元素，直到任意一个元素返回 True</span>
+<span class="sd">    :param xpath_list: xpath 列表</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="getelementtext">
+<h3>获取元素文本 <code class="docutils literal notranslate"><span class="pre">getElementText()</span></code><a class="headerlink" href="#getelementtext" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-32-32-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-32-32-0" name="32-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-32-32-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-32-32-1" name="32-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-32-32-0" class="sphinx-tabs-panel" id="panel-32-32-0" name="32-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getElementText</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">// 获取文本</span>
+<span class="c1">// 参数一 字符串类型，元素路径</span>
+<span class="c1">// 成功返回元素内容，失败返回null</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 遍历xpath 获取所有兄弟节点内容</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getElementText</span><span class="p">(</span><span class="sb">`com.android.settings/android:id=title[</span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">]`</span><span class="p">);</span><span class="c1">//模板字符串</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-32-32-1" class="sphinx-tabs-panel" hidden="true" id="panel-32-32-1" name="32-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_element_text</span><span class="p">(</span><span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    获取元素文本</span>
+<span class="sd">    :param xpath: xpath 路径</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="setelementtext">
+<h3>设置文本 <code class="docutils literal notranslate"><span class="pre">setElementText</span></code><a class="headerlink" href="#setelementtext" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-33-33-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-33-33-0" name="33-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-33-33-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-33-33-1" name="33-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-33-33-0" class="sphinx-tabs-panel" id="panel-33-33-0" name="33-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">setElementText</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">);</span>
+<span class="c1">// 设置文本</span>
+<span class="c1">// 参数一 字符串类型，元素路径</span>
+<span class="c1">// 参数一 字符串类型，设置的文本</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-33-33-1" class="sphinx-tabs-panel" hidden="true" id="panel-33-33-1" name="33-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_element_text</span><span class="p">(</span>
+        <span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    设置元素文本</span>
+<span class="sd">    :param xpath:</span>
+<span class="sd">    :param text:</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="getelementdescription">
+<h3>获取元素描述 <code class="docutils literal notranslate"><span class="pre">getElementDescription()</span></code><a class="headerlink" href="#getelementdescription" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-34-34-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-34-34-0" name="34-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-34-34-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-34-34-1" name="34-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-34-34-0" class="sphinx-tabs-panel" id="panel-34-34-0" name="34-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getElementDescription</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">// 获取元素描述</span>
+<span class="c1">// 参数一 字符串类型，元素路径</span>
+<span class="c1">// 成功返回元素描述内容，失败返回null</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-34-34-1" class="sphinx-tabs-panel" hidden="true" id="panel-34-34-1" name="34-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_element_desc</span><span class="p">(</span>
+        <span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    获取元素描述</span>
+<span class="sd">    :param xpath: xpath 路径</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="getelementrect">
+<h3>获取元素矩形位置 <code class="docutils literal notranslate"><span class="pre">getElementRect()</span></code><a class="headerlink" href="#getelementrect" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-35-35-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-35-35-0" name="35-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-35-35-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-35-35-1" name="35-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-35-35-0" class="sphinx-tabs-panel" id="panel-35-35-0" name="35-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getElementRect</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">// 获取位置</span>
+<span class="c1">// 参数一 字符串类型，元素路径</span>
+<span class="c1">// 成功返回{left:number, top:number, right:number, bottom:number}，失败返回null</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-35-35-1" class="sphinx-tabs-panel" hidden="true" id="panel-35-35-1" name="35-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_element_rect</span><span class="p">(</span>
+        <span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">_Point</span><span class="p">,</span> <span class="n">_Point</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    获取元素位置，返回元素区域左上角和右下角坐标</span>
+<span class="sd">    :param xpath: xpath 路径</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="existselement">
+<h3>判断元素是否存在 <code class="docutils literal notranslate"><span class="pre">existsElement()</span></code><a class="headerlink" href="#existselement" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-36-36-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-36-36-0" name="36-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-36-36-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-36-36-1" name="36-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-36-36-0" class="sphinx-tabs-panel" id="panel-36-36-0" name="36-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">existsElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">// 判断元素是否存在</span>
+<span class="c1">// 参数一 字符串类型，元素路径</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-36-36-1" class="sphinx-tabs-panel" hidden="true" id="panel-36-36-1" name="36-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">element_exists</span><span class="p">(</span>
+        <span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    元素是否存在</span>
+<span class="sd">    :param xpath: xpath 路径</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="elementnotexists">
+<h3>元素是否不存在 <code class="docutils literal notranslate"><span class="pre">elementNotExists()</span></code><a class="headerlink" href="#elementnotexists" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-37-37-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-37-37-0" name="37-0" role="tab" tabindex="0">Python</button></div><div aria-labelledby="tab-37-37-0" class="sphinx-tabs-panel" id="panel-37-37-0" name="37-0" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">element_not_exists</span><span class="p">(</span>
+        <span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    元素是否不存在</span>
+<span class="sd">    :param xpath: xpath 路径</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="anyelementsexists">
+<h3>判断任意是否元素存在 <code class="docutils literal notranslate"><span class="pre">anyElementsExists()</span></code><a class="headerlink" href="#anyelementsexists" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-38-38-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-38-38-0" name="38-0" role="tab" tabindex="0">Python</button></div><div aria-labelledby="tab-38-38-0" class="sphinx-tabs-panel" id="panel-38-38-0" name="38-0" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">any_elements_exists</span><span class="p">(</span><span class="n">xpath_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">wait_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">interval_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                        <span class="n">raise_err</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    遍历列表中的元素，只要任意一个元素存在就返回 True</span>
+<span class="sd">    :param xpath_list: xpath 列表</span>
+<span class="sd">    :param wait_time: 等待时间，默认取 .wait_timeout</span>
+<span class="sd">    :param interval_time: 轮询间隔时间，默认取 .interval_timeout</span>
+<span class="sd">    :param raise_err: 超时是否抛出异常；</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="isselectedelement">
+<h3>判断元素是否选中 <code class="docutils literal notranslate"><span class="pre">isSelectedElement()</span></code><a class="headerlink" href="#isselectedelement" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-39-39-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-39-39-0" name="39-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-39-39-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-39-39-1" name="39-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-39-39-0" class="sphinx-tabs-panel" id="panel-39-39-0" name="39-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">isSelectedElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">);</span>
+<span class="c1">// 判断元素是否选中</span>
+<span class="c1">// 参数一 字符串类型，元素路径</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-39-39-1" class="sphinx-tabs-panel" hidden="true" id="panel-39-39-1" name="39-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">element_is_selected</span><span class="p">(</span><span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    元素是否存在</span>
+<span class="sd">    :param xpath: xpath 路径</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="scrollelement">
+<h3>滚动元素 <code class="docutils literal notranslate"><span class="pre">scrollElement()</span></code><a class="headerlink" href="#scrollelement" title="此标题的永久链接">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-40-40-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-40-40-0" name="40-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-40-40-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-40-40-1" name="40-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-40-40-0" class="sphinx-tabs-panel" id="panel-40-40-0" name="40-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">scrollElement</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nx">direction</span><span class="p">);</span>
+<span class="c1">// 滚动元素</span>
+<span class="c1">// 参数一 字符串类型，元素路径</span>
+<span class="c1">// 参数二 整型，0 向前滑动， 1 向后滑动</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-40-40-1" class="sphinx-tabs-panel" hidden="true" id="panel-40-40-1" name="40-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scroll_element</span><span class="p">(</span><span class="n">xpath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    滚动元素，0 向上滑动，1 向下滑动</span>
+<span class="sd">    :param xpath: xpath 路径</span>
+<span class="sd">    :param direction: 滚动方向，0 向上滑动，1 向下滑动</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+<section id="id12">
+<h2>文件传输<a class="headerlink" href="#id12" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-41-41-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-41-41-0" name="41-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-41-41-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-41-41-1" name="41-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-41-41-0" class="sphinx-tabs-panel" id="panel-41-41-0" name="41-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">pushFile</span><span class="p">(</span><span class="s2">&quot;d:\\1.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/storage/emulated/0/1.png&quot;</span><span class="p">);</span>
+<span class="c1">//上传文件到手机</span>
+<span class="c1">//参数一 字符串类型，电脑文件路径</span>
+<span class="c1">//参数二 字符串类型，安卓文件保存路径, 安卓外部存储根目录 /storage/emulated/0/</span>
+<span class="c1">//媒体文件会自动更新至相册</span>
+<span class="c1">//成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">pullFile</span><span class="p">(</span><span class="s2">&quot;/storage/emulated/0/1.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;d:\\1.png&quot;</span><span class="p">);</span>
+<span class="c1">//拉取文件到电脑</span>
+<span class="c1">//参数一 字符串类型，安卓文件路径, 安卓外部存储根目录 /storage/emulated/0/</span>
+<span class="c1">//参数二 字符串类型，电脑文件保存路径</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-41-41-1" class="sphinx-tabs-panel" hidden="true" id="panel-41-41-1" name="41-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id13">
+<h2>安卓文件操作<a class="headerlink" href="#id13" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-42-42-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-42-42-0" name="42-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-42-42-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-42-42-1" name="42-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-42-42-0" class="sphinx-tabs-panel" id="panel-42-42-0" name="42-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">writeAndroidFile</span><span class="p">(</span><span class="s2">&quot;/storage/emulated/0/1.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aibote是一款非常优秀的RPA自动化平台&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="c1">// 写入安卓文件</span>
+<span class="c1">// 参数一 字符串类型，安卓文件路径，安卓外部存储根目录 /storage/emulated/0/</span>
+<span class="c1">// 参数二 字符串类型，写入的内容</span>
+<span class="c1">// 参数三 布尔类型，可选参数，是否追加，默认覆盖文件内容</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">readAndroidFile</span><span class="p">(</span><span class="s2">&quot;/storage/emulated/0/1.txt&quot;</span><span class="p">);</span>
+<span class="c1">// 读取安卓文件</span>
+<span class="c1">// 参数一 字符串类型，安卓文件路径，安卓外部存储根目录 /storage/emulated/0/</span>
+<span class="c1">// 成功返回文件内容，失败返回 null</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">deleteAndroidFile</span><span class="p">(</span><span class="s2">&quot;/storage/emulated/0/Android/data/com.aibot.client/files/1.png&quot;</span><span class="p">);</span>
+<span class="c1">// 删除安卓文件</span>
+<span class="c1">// 参数一 字符串类型，安卓文件路径，安卓外部存储根目录 /storage/emulated/0/</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">existsAndroidFile</span><span class="p">(</span><span class="s2">&quot;/storage/emulated/0/Android/data/com.aibot.client/files/1.png&quot;</span><span class="p">);</span>
+<span class="c1">// 判断文件是否存在</span>
+<span class="c1">// 参数一 字符串类型，安卓文件路径，安卓外部存储根目录 /storage/emulated/0/</span>
+<span class="c1">// 成功返回true 失败返回false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-42-42-1" class="sphinx-tabs-panel" hidden="true" id="panel-42-42-1" name="42-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="intent">
+<h2>Intent跳转<a class="headerlink" href="#intent" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-43-43-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-43-43-0" name="43-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-43-43-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-43-43-1" name="43-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-43-43-0" class="sphinx-tabs-panel" id="panel-43-43-0" name="43-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">openUri</span><span class="p">(</span><span class="s2">&quot;alipayqr://platformapi/startapp?saId=10000007&quot;</span><span class="p">);</span>
+<span class="c1">//跳转uri</span>
+<span class="c1">//参数一 字符串类型，跳转链接</span>
+<span class="c1">//成功返回true，失败返回 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">callPhone</span><span class="p">(</span><span class="s2">&quot;10086&quot;</span><span class="p">);</span>
+<span class="c1">//拨打电话</span>
+<span class="c1">//参数一 字符串类型，拨打的电话号码</span>
+<span class="c1">//成功返回true，失败返回 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">sendMsg</span><span class="p">(</span><span class="s2">&quot;10086&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="p">)</span>
+<span class="c1">//发送短信</span>
+<span class="c1">//参数一 字符串类型，发送的电话号码</span>
+<span class="c1">//参数二 字符串类型，短信内容</span>
+<span class="c1">//成功返回true，失败返回 false</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-43-43-1" class="sphinx-tabs-panel" hidden="true" id="panel-43-43-1" name="43-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id14">
+<h2>获取包名/窗口<a class="headerlink" href="#id14" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-44-44-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-44-44-0" name="44-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-44-44-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-44-44-1" name="44-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-44-44-0" class="sphinx-tabs-panel" id="panel-44-44-0" name="44-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getActivity</span><span class="p">();</span>
+<span class="c1">//成功返回当前activity</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getPackage</span><span class="p">();</span>
+<span class="c1">//成功返回当前package</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-44-44-1" class="sphinx-tabs-panel" hidden="true" id="panel-44-44-1" name="44-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id15">
+<h2>安卓剪切板<a class="headerlink" href="#id15" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-45-45-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-45-45-0" name="45-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-45-45-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-45-45-1" name="45-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-45-45-0" class="sphinx-tabs-panel" id="panel-45-45-0" name="45-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">setClipboardText</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="c1">// 设置剪切板内容</span>
+<span class="c1">// 参数一 字符串型，设置的文本</span>
+<span class="c1">// 成功返回true 失败返回 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getClipboardText</span><span class="p">();</span>
+<span class="c1">// 获取剪切板内容，需要打开aibote输入法。</span>
+<span class="c1">// 成功返回剪切板文本，失败返回null</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-45-45-1" class="sphinx-tabs-panel" hidden="true" id="panel-45-45-1" name="45-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="id16">
+<h2>创建脚本控件<a class="headerlink" href="#id16" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-46-46-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-46-46-0" name="46-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-46-46-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-46-46-1" name="46-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-46-46-0" class="sphinx-tabs-panel" id="panel-46-46-0" name="46-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">createTextView</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">);</span>
+<span class="c1">// 创建TextView控件</span>
+<span class="c1">// 参数一 整型，控件ID，不可与其他控件重复</span>
+<span class="c1">// 参数二 字符串型，控件文本</span>
+<span class="c1">// 参数三 整型，控件在屏幕上x坐标</span>
+<span class="c1">// 参数四 整型，控件在屏幕上y坐标</span>
+<span class="c1">// 参数五 整型，控件宽度</span>
+<span class="c1">// 参数六 整型，控件高度</span>
+<span class="c1">// 成功返回true，失败返回 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">createEditText</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">hintText</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">);</span>
+<span class="c1">// 创建EditText控件</span>
+<span class="c1">// 参数一 整型，控件ID，不可与其他控件重复</span>
+<span class="c1">// 参数二 字符串型，提示文本</span>
+<span class="c1">// 参数三 整型，控件在屏幕上x坐标</span>
+<span class="c1">// 参数四 整型，控件在屏幕上y坐标</span>
+<span class="c1">// 参数五 整型，控件宽度</span>
+<span class="c1">// 参数六 整型，控件高度</span>
+<span class="c1">// 成功返回true，失败返回 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">createCheckBox</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">);</span>
+<span class="c1">// 创建CheckBox控件</span>
+<span class="c1">// 参数一 整型，控件ID，不可与其他控件重复</span>
+<span class="c1">// 参数二 字符串型，控件文本</span>
+<span class="c1">// 参数三 整型，控件在屏幕上x坐标</span>
+<span class="c1">// 参数四 整型，控件在屏幕上y坐标</span>
+<span class="c1">// 参数五 整型，控件宽度</span>
+<span class="c1">// 参数六 整型，控件高度</span>
+<span class="c1">// 成功返回true，失败返回 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">createWebView</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">);</span>
+<span class="c1">// 创建WebView控件</span>
+<span class="c1">// 参数一 整型，控件ID，不可与其他控件重复</span>
+<span class="c1">// 参数二 字符串型，加载的链接</span>
+<span class="c1">// 参数三 整型，控件在屏幕上x坐标，值为-1时自动填充宽高</span>
+<span class="c1">// 参数四 整型，控件在屏幕上y坐标，值为-1时自动填充宽高</span>
+<span class="c1">// 参数五 整型，控件宽度，值为-1时自动填充宽高</span>
+<span class="c1">// 参数六 整型，控件高度，值为-1时自动填充宽高</span>
+<span class="c1">// 成功返回true，失败返回 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">clearScriptControl</span><span class="p">();</span>
+<span class="c1">// 清除脚本控件</span>
+<span class="c1">// 成功返回true，失败返回 false</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getScriptParam</span><span class="p">();</span>
+<span class="c1">// 获取脚本配置参数，用户点击安卓端 &quot;提交参数&quot;按钮 触发</span>
+<span class="c1">// 成功返回{&quot;id&quot;:&quot;text&quot;, &quot;id&quot;:&quot;isSelect&quot;} 此类对象，失败返回null。</span>
+
+<span class="c1">// 代码示例</span>
+<span class="c1">// 创建TextView 和 EditText 控件</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">createTextView</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;输入参数&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">createEditText</span><span class="p">(</span><span class="mf">101</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">450</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">);</span>
+
+<span class="c1">// 等待用户提交，获取参数</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">retParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">androidBot</span><span class="p">.</span><span class="nx">getScriptParam</span><span class="p">();</span>
+<span class="nx">param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">retParams</span><span class="p">[</span><span class="s2">&quot;101&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;用户输入的参数是：&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">param</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-46-46-1" class="sphinx-tabs-panel" hidden="true" id="panel-46-46-1" name="46-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">Aibote 开发手册</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../window_bot/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">WindowBot</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">主函数示例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">等待超时</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">图片与颜色</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#savescreenshot">截图保存 <code class="docutils literal notranslate"><span class="pre">saveScreenshot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findimage">找图 <code class="docutils literal notranslate"><span class="pre">findImage()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findanimation">找动态图 <code class="docutils literal notranslate"><span class="pre">findAnimation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getcolor">获取颜色值 <code class="docutils literal notranslate"><span class="pre">getColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparecolor">比色 <code class="docutils literal notranslate"><span class="pre">compareColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findcolor">找色 <code class="docutils literal notranslate"><span class="pre">findColor()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocr">OCR系统</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findwords">获取文字坐标 <code class="docutils literal notranslate"><span class="pre">findWords()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getwords">获取屏幕文字 <code class="docutils literal notranslate"><span class="pre">getWords()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test">测试 <code class="docutils literal notranslate"><span class="pre">test()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculateArea"><code class="docutils literal notranslate"><span class="pre">calculateArea()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AiBot.AndroidBotMain.any_elements_exists"><code class="docutils literal notranslate"><span class="pre">AndroidBotMain.any_elements_exists()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#square"><code class="docutils literal notranslate"><span class="pre">square()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">AndroidBotMain.any_elements_exists()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculateArea"><code class="docutils literal notranslate"><span class="pre">calculateArea()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><code class="docutils literal notranslate"><span class="pre">AndroidBotMain.any_elements_exists()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">点击手势</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#click">单击 <code class="docutils literal notranslate"><span class="pre">click()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doubleclick">双击 <code class="docutils literal notranslate"><span class="pre">doubleClick()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#press">按下 <code class="docutils literal notranslate"><span class="pre">press()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longclick">长按 <code class="docutils literal notranslate"><span class="pre">longClick()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release">抬起 <code class="docutils literal notranslate"><span class="pre">release()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#move">移动 <code class="docutils literal notranslate"><span class="pre">move()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#swipe">滑动 <code class="docutils literal notranslate"><span class="pre">swipe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispatchgesture">执行手势 <code class="docutils literal notranslate"><span class="pre">dispatchGesture()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispatchgestures">执行多个手势 <code class="docutils literal notranslate"><span class="pre">dispatchGestures()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">发送文本</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">发送按键</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#app">启动APP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">屏幕大小</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">图片大小</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id">获取安卓ID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#url">URL请求</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toast">Toast消息提示</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">验证码系统</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">元素操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clickelement">点击元素 <code class="docutils literal notranslate"><span class="pre">clickElement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clickelementbyslide">滑动并点击元素 <code class="docutils literal notranslate"><span class="pre">clickElementBySlide()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clickanyelements">遍历点击元素 <code class="docutils literal notranslate"><span class="pre">clickAnyElements</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getelementtext">获取元素文本 <code class="docutils literal notranslate"><span class="pre">getElementText()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setelementtext">设置文本 <code class="docutils literal notranslate"><span class="pre">setElementText</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getelementdescription">获取元素描述 <code class="docutils literal notranslate"><span class="pre">getElementDescription()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getelementrect">获取元素矩形位置 <code class="docutils literal notranslate"><span class="pre">getElementRect()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existselement">判断元素是否存在 <code class="docutils literal notranslate"><span class="pre">existsElement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elementnotexists">元素是否不存在 <code class="docutils literal notranslate"><span class="pre">elementNotExists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anyelementsexists">判断任意是否元素存在 <code class="docutils literal notranslate"><span class="pre">anyElementsExists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isselectedelement">判断元素是否选中 <code class="docutils literal notranslate"><span class="pre">isSelectedElement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scrollelement">滚动元素 <code class="docutils literal notranslate"><span class="pre">scrollElement()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">文件传输</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">安卓文件操作</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intent">Intent跳转</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">获取包名/窗口</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">安卓剪切板</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">创建脚本控件</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/dev_manual/android_bot/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> 显示源代码
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, Aibote.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

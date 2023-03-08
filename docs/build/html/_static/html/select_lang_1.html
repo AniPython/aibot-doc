@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div style="position: fixed; bottom: 0; right: 0; margin: 20px; color: #0c390ebb;">
+    <div>
+        <label>
+            <input type="checkbox" checked class="code-toggle" data-target="nodejs-block">
+            nodejs
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" class="code-toggle" data-target="python-block">
+            python
+        </label>
+    </div>
+
+</div>
+
+<div class="code-block nodejs-block">
+    <pre><code>JavaScript code goes here...</code></pre>
+</div>
+
+<div class="code-block python-block">
+    <pre><code>Python code goes here...</code></pre>
+</div>
+
+<div class="code-block nodejs-block">
+    <pre><code>JavaScript code goes here... 222</code></pre>
+</div>
+
+
+<script>
+    var toggles = document.querySelectorAll('.code-toggle');
+    var blocks = document.querySelectorAll('.code-block');
+
+    function change(toggle) {
+        var target = toggle.dataset.target;
+        blocks.forEach(function (block) {
+            if (block.classList.contains(target)) {
+                block.style.display = toggle.checked ? 'block' : 'none';
+            }
+        });
+    }
+
+    toggles.forEach(function (toggle) {
+        change(toggle)
+    });
+
+    toggles.forEach(function (toggle) {
+        toggle.addEventListener('change', function () {
+            change(toggle)
+        });
+    });
+
+</script>
+
+
+</body>
+</html>

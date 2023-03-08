@@ -1,0 +1,2 @@
+
+.. js:autofunction:: square
