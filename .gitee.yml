@@ -1,4 +1,4 @@
-image: python:3.8-slim-buster
+image: python:3.11-slim-buster
 before_script:
   - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx
 script:
