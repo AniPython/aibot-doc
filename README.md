@@ -1,4 +1,4 @@
-# aibote-doc
+# aibot-doc
 
 #### 介绍
 aibote 项目的文档
