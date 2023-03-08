@@ -14,11 +14,3 @@ script:
 artifacts:
   paths:
     - html
-
-
-    'sphinx_copybutton',  # sphinx-copybutton
-    'sphinx_tabs.tabs',  #
-    'sphinx_togglebutton',  #
-    'myst_nb',  # parse .md and .ipynb  myst-nb
-    'sphinx_jinja',  #
-    'sphinx_js',  #   + npm install -g jsdoc
