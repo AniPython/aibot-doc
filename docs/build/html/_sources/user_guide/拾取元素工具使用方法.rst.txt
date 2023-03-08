@@ -1,0 +1,34 @@
+拾取元素工具
+=========================
+
+
+Android 工具位置，Aibote/Aibote.exe->菜单项->脚本工具
+
+Windows 工具位置，Aibote/WindowsTool.exe
+
+Android 元素拾取工具，需要在手机端，勾选连接工具端选项
+
+Windows 元素拾取工具，按下CTRL键，暂停拾取。支持鼠标左键/中键拾取
+
+元素拾取工具使用方法：
+
+1. 点击"+"按钮 单击手机投屏/windows 窗口，拾取元素和颜色信息。单击目标点会在右和下扩增20个像素点，用作放大目标位置。 再点击预览图片控件可拾取放大后 点的颜色值和坐标
+
+2. 点击"+"按钮 在手机投屏/windows 窗口滑动矩形大小，拾取元素和图片信息。截图前输入图片名称。Android端，图片保存在手机/storage/emulated/0/Android/data/com.aibot.client/files/
+（根目录：/storage/emulated/0/）。Windows端，图片保存在指定路径目录，如果图片名称不包含路径，则默认保存在Aibote/Picture/windows
+
+3. 二值化阈值和最大值在0-255之间，阈值和最大值都为255时灰度化处理
+
+4. BINARY算法，当前点值大于阈值thresh时，取最大值maxva，否则设置为0
+
+5. BINARY_INV算法，当前点值大于阈值thresh时，设置为0，否则设置为最大值maxva
+
+6. TOZERO算法，当前点值大于阈值thresh时，不改变，否则设置为0
+
+7. TOZERO_INV算法，当前点值大于阈值thresh时，设置为0，否则不改变
+
+8. TRUNC算法，当前点值大于阈值thresh时，设置为阈值thresh，否则不改变
+
+9. ADAPTIVE_THRESH_MEAN_C算法，自适应阈值
+
+10. ADAPTIVE_THRESH_GAUSSIAN_C算法，自适应阈值

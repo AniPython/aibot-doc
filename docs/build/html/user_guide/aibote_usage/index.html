@@ -1,0 +1,640 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Aibote基本使用 &#8212; Aibote  文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/aibote_usage/index';</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Aibote 开发手册" href="../../dev_manual/index.html" />
+    <link rel="prev" title="拾取元素工具" href="../%E6%8B%BE%E5%8F%96%E5%85%83%E7%B4%A0%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Aibote  文档</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Aibote 基本使用
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev_manual/index.html">
+                        Aibote 开发手册
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Aibote 基本使用
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../dev_manual/index.html">
+                        Aibote 开发手册
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Aibote%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5.html">Aibote 使用须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E6%8B%BE%E5%8F%96%E5%85%83%E7%B4%A0%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html">拾取元素工具</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aibote基本使用</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Aibote 基本使用</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Aibote基本使用</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="aibote">
+<h1>Aibote基本使用<a class="headerlink" href="#aibote" title="此标题的永久链接">#</a></h1>
+<section id="id1">
+<h2>安装<a class="headerlink" href="#id1" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>npm<span class="w"> </span>...
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>AiBot.py
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="androidbot">
+<h2>使用 AndroidBot 编写脚本<a class="headerlink" href="#androidbot" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 导入 AndroidBotMain 类</span>
+<span class="kn">from</span> <span class="nn">AiBot</span> <span class="kn">import</span> <span class="n">AndroidBotMain</span>
+
+
+<span class="c1"># 2. 自定义一个脚本类，继承 AndroidBotMain</span>
+<span class="k">class</span> <span class="nc">CustomAndroidScript</span><span class="p">(</span><span class="n">AndroidBotMain</span><span class="p">):</span>
+    <span class="c1"># 3. 设置等待参数</span>
+    <span class="c1"># 3.1 设置等待时间</span>
+    <span class="n">wait_timeout</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="c1"># 3.2 设置重试间隔时长</span>
+    <span class="n">interval_timeout</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+    <span class="c1"># 4. 设置日志等级</span>
+    <span class="n">log_level</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span>  <span class="c1"># &quot;DEBUG&quot;</span>
+
+    <span class="c1"># 5. 设置方法超时是否抛出异常</span>
+    <span class="n">raise_err</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># True</span>
+
+    <span class="c1"># 6. 重写方法，编写脚本</span>
+    <span class="c1"># 注意：此方法是脚本执行入口</span>
+    <span class="k">def</span> <span class="nf">script_main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># 6.1 API 演示</span>
+        <span class="c1"># 注意：Python 版本支持的 Api 与 Nodejs 基本相同</span>
+        <span class="c1"># 教程中仅演示部分 Api，更多 Api 请自行探索，所有 Api 均包含详细的参数要求和返回值，请自行查看。</span>
+
+        <span class="c1"># 截图</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="s2">&quot;xxx.png&quot;</span><span class="p">)</span>
+        <span class="c1"># 获取坐标点颜色</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_color</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="c1"># 查找图片</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">find_image</span><span class="p">(</span><span class="s2">&quot;xxx.png&quot;</span><span class="p">)</span>
+        <span class="c1"># 点击坐标</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="c1"># 滑动</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">swipe</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+
+
+<span class="c1"># 7. 执行脚本，Pycharm 中，直接右键执行</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># 注意：此处监听的端口号，必须和手机端的脚本端口号一致；</span>
+    <span class="c1"># 监听 3333 号端口</span>
+    <span class="n">CustomAndroidScript</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="mi">3333</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="winbot">
+<h2>使用 WinBot 编写脚本<a class="headerlink" href="#winbot" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 导入 WinBotMain 类</span>
+<span class="kn">from</span> <span class="nn">AiBot</span> <span class="kn">import</span> <span class="n">WinBotMain</span>
+
+
+<span class="c1"># 2. 自定义一个脚本类，继承 WinBotMain</span>
+<span class="k">class</span> <span class="nc">CustomWinScript</span><span class="p">(</span><span class="n">WinBotMain</span><span class="p">):</span>
+    <span class="c1"># 3. 设置等待参数</span>
+    <span class="c1"># 3.1 设置等待时间</span>
+    <span class="n">wait_timeout</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="c1"># 3.2 设置重试间隔时长</span>
+    <span class="n">interval_timeout</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+    <span class="c1"># 4. 设置日志等级</span>
+    <span class="n">log_level</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span>  <span class="c1"># &quot;DEBUG&quot;</span>
+
+    <span class="c1"># 5. 设置方法超时是否抛出异常</span>
+    <span class="n">raise_err</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># True</span>
+
+    <span class="c1"># 6. 重写方法，编写脚本</span>
+    <span class="c1"># 注意：此方法是脚本执行入口</span>
+    <span class="k">def</span> <span class="nf">script_main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># 6.1 API 演示</span>
+        <span class="c1"># 注意：Python 版本支持的 Api 与 Nodejs 基本相同</span>
+        <span class="c1"># 教程中仅演示部分 Api，更多 Api 请自行探索，所有 Api 均包含详细的参数要求和返回值，请自行查看。</span>
+
+        <span class="c1"># 查询所有窗口句柄</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_windows</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># [&quot;1050010&quot;, &quot;1050011&quot;, &quot;1050012&quot;]</span>
+
+        <span class="c1"># 查询指定窗口句柄</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_window</span><span class="p">(</span><span class="n">window_name</span><span class="o">=</span><span class="s2">&quot;Ai-Bot 2群等9个会话&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># &quot;1050010&quot;</span>
+
+
+<span class="c1"># 7. 执行脚本，Pycharm 中，直接右键执行</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># 启动脚本，监听 6666 号端口</span>
+
+    <span class="c1"># local=True 时，是本地运行脚本，会自动启动 WindowsDriver.exe 驱动；</span>
+    <span class="c1"># 在远端部署脚本时，请设置 local=False，手动启动 WindowsDriver.exe，启动 WindowsDriver.exe 时需指定远端 IP 或端口号；</span>
+
+    <span class="n">CustomWinScript</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="mi">6666</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="webbot">
+<h2>使用 WebBot 编写脚本<a class="headerlink" href="#webbot" title="此标题的永久链接">#</a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">JavaScript</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Python</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># 1. 导入 WebBotMain 类</span>
+<span class="kn">from</span> <span class="nn">AiBot</span> <span class="kn">import</span> <span class="n">WebBotMain</span>
+
+
+<span class="c1"># 2. 自定义一个脚本类，继承 WebBotMain</span>
+<span class="k">class</span> <span class="nc">CustomWebScript</span><span class="p">(</span><span class="n">WebBotMain</span><span class="p">):</span>
+    <span class="c1"># 3. 设置等待参数</span>
+    <span class="c1"># 3.1 设置等待时间</span>
+    <span class="n">wait_timeout</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="c1"># 3.2 设置重试间隔时长</span>
+    <span class="n">interval_timeout</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+    <span class="c1"># 4. 设置日志等级</span>
+    <span class="n">log_level</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span>  <span class="c1"># &quot;DEBUG&quot;</span>
+
+    <span class="c1"># 5. 设置方法超时是否抛出异常</span>
+    <span class="n">raise_err</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># True</span>
+
+    <span class="c1"># 6. 重写方法，编写脚本</span>
+    <span class="c1"># 注意：此方法是脚本执行入口</span>
+    <span class="k">def</span> <span class="nf">script_main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># 6. API 演示</span>
+        <span class="c1"># 注意：Python 版本支持的 Api 与 Nodejs 基本相同</span>
+        <span class="c1"># 教程中仅演示部分 Api，更多 Api 请自行探索，所有 Api 均包含详细的参数要求和返回值，请自行查看。</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.baidu.com&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_page</span><span class="p">(</span><span class="s2">&quot;https://www.qq.com&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s1">&#39;(()=&gt;&quot;aibote rpa&quot;)()&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># aibote rpa</span>
+
+
+<span class="c1"># 7. 执行脚本，Pycharm 中，直接右键执行</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># 启动脚本，监听 9999 号端口</span>
+    <span class="c1"># 默认使用 Chrome 浏览器</span>
+
+    <span class="c1"># local=True 时，是本地运行脚本，会自动启动 WebDriver.exe 驱动；</span>
+    <span class="c1"># 在远端部署脚本时，请设置 local=False，手动启动 WebDriver.exe，启动 WebDriver.exe 时需指定远端 IP 或端口号；</span>
+
+    <span class="c1"># 如本地部署脚本，需要传递 WebDriver 启动参数时，参考下面方式，如不需传递启动参数，则忽略：</span>
+    <span class="n">driver_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;browserName&quot;</span><span class="p">:</span> <span class="s2">&quot;chrome&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;debugPort&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;userDataDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./UserData&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;browserPath&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;argument&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">CustomWebScript</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="mi">9999</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver_params</span><span class="o">=</span><span class="n">driver_params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../%E6%8B%BE%E5%8F%96%E5%85%83%E7%B4%A0%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">拾取元素工具</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../dev_manual/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">Aibote 开发手册</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">安装</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#androidbot">使用 AndroidBot 编写脚本</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#winbot">使用 WinBot 编写脚本</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#webbot">使用 WebBot 编写脚本</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/user_guide/aibote_usage/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> 显示源代码
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, Aibote.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
